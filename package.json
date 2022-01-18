@@ -7,7 +7,8 @@
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
-    "format": "prettier --write \"src/**/*.{js,jsx}\""
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,8 @@
   },
   "homepage": "https://github.com/CodersCamp2021/JoaoTeam-Project-2#readme",
   "devDependencies": {
+    "eslint": "^8.7.0",
+    "eslint-config-prettier": "^8.3.0",
     "parcel": "^2.2.1",
     "prettier": "2.5.1"
   },
