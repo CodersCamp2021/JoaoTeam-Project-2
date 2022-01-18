@@ -1,0 +1,19 @@
+{
+  "name": "joaoteam-project-2",
+  "version": "1.0.0",
+  "description": "The Polish on GitHub",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodersCamp2021/JoaoTeam-Project-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodersCamp2021/JoaoTeam-Project-2/issues"
+  },
+  "homepage": "https://github.com/CodersCamp2021/JoaoTeam-Project-2#readme"
+}
