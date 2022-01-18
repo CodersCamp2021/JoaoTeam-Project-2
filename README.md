@@ -1,2 +1,2 @@
 # JoaoTeam-Project-2
-CodersCamp 2021 - Team Joao Kiakumbo 
+## Project 2 - The Polish on GitHub
