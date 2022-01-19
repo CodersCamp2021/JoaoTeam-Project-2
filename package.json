@@ -8,7 +8,9 @@
     "start": "parcel",
     "build": "parcel build",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
+    "test": "jest src --env=jsdom",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -21,11 +23,17 @@
   },
   "homepage": "https://github.com/CodersCamp2021/JoaoTeam-Project-2#readme",
   "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.16.7",
+    "@babel/preset-env": "^7.16.8",
+    "@babel/preset-react": "^7.16.7",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
     "eslint": "^8.7.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
+    "jest": "^27.4.7",
     "parcel": "^2.2.1",
     "prettier": "2.5.1"
   },
