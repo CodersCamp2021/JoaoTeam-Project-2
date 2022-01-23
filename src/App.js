@@ -1,10 +1,13 @@
 import { render } from "react-dom"
 
-import TestComponent from "./components/TestComponent/TestComponent"
+import SearchWindow from "./components/Search/Search"
 
 const App = () => {
     return (
-        <TestComponent />
+        <div>
+            <h1>Hello World</h1>
+            <SearchWindow />
+        </div>
     )
 }
 
