@@ -26,8 +26,10 @@ export default function SearchWindow() {
                         onChange={(e) => updateLanguage(e.target.value)}
                         className="input-area" />
                 </label>
-                <input type="submit" value="Find coders" className="submitBtn" />
+                <input type="image" className="submitBtn">
+                </input>
             </form>
         </div>
     )
 }
+
