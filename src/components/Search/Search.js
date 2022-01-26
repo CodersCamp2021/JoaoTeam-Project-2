@@ -6,16 +6,16 @@ export default function SearchWindow() {
     const [language, updateLanguage] = useState("");
 
     useEffect(() => {
-        requestProfile();
+        requestProfiles();
     }, []);
 
-    async function requestProfile() {
+    async function requestProfiles() {
         const res = await fetch(
-            `https://api.github.com/search/users?q=location=${location}&language=${language}&per_page=20&page=1&sort=best match&order=desc`
+            `https://api.github.com/search/users?q=location:${location}&per_page=20&page=1&sort=bestmatch&order=desc`
         );
         const json = await res.json();
 
-        setProfile(json.profile);
+        setProfiles(json.profiles);
     }
 
     return (
