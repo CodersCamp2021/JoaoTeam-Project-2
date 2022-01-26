@@ -1,3 +1,5 @@
+@import url(Search.css);
+
 .main-page-container {
     background: url(../styles/UI/background_gradient.png) no-repeat;
     min-height: 100%;
@@ -38,12 +40,15 @@
     font-weight: bold;
 }
 
+.right-main {
+    grid-area: right-main;
+    margin-left: 14vw;
+}
+
 .left-main {
     grid-area: left-main;
 }
-.right-main {
-    grid-area: right-main;
-}
+
 
 .bottom-bar {
     grid-area: bottom-bar; 

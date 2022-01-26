@@ -1,12 +1,10 @@
 import { render } from "react-dom"
-
-import SearchWindow from "./components/Search/Search"
+import MainPage from "./components/MainPage/MainPage"
 
 const App = () => {
     return (
         <div>
-
-            <SearchWindow />
+            <MainPage />
         </div>
     )
 }

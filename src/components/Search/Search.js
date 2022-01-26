@@ -1,12 +1,25 @@
 import React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function SearchWindow() {
     const [location, updateLocation] = useState("");
     const [language, updateLanguage] = useState("");
 
+    useEffect(() => {
+        requestProfile();
+    }, []);
+
+    async function requestProfile() {
+        const res = await fetch(
+            `https://api.github.com/search/users?q=location=${location}&language=${language}&per_page=20&page=1&sort=best match&order=desc`
+        );
+        const json = await res.json();
+
+        setProfile(json.profile);
+    }
+
     return (
-        <div className="search-window">
+        <div className="right-main">
             <form>
                 <label htmlFor="location">
                     <h5 className="inline-text">Best coders who live...</h5>
@@ -33,3 +46,4 @@ export default function SearchWindow() {
     )
 }
 
+export default SearchWindow;

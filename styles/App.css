@@ -1,10 +1,7 @@
 @import url(./MainPage.css);
-@import url(./Search.css);
 
 body {
     background-color: whitesmoke;
     font-family: 'Nunito', sans-serif;
     color: #0E0E10;
-    /* Do testów */
-    background-image: url(./UI/background.png);
 }
