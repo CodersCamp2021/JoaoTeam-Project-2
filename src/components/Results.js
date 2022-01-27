@@ -21,6 +21,7 @@ const Results = () => {
 		<>
 			<div className="results-container">
 				<img className="logo" />
+				<img className="details" />
 				<div className="users-container">
 					{users.map((user) => {
 						return (
