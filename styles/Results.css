@@ -14,16 +14,31 @@ body {
 	grid-template-areas:
 		"logo"
 		"details"
-		"users"
-		"page";
+		"users";
 }
 
 .users-container {
 	margin-top: 3rem;
 	grid-area: users;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	gap: 10% 5%;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	gap: 15% 6%;
+}
+
+.details {
+	grid-area: details;
+	width: 1350px;
+	margin-top: 3rem;
+	content: url(../styles/UI/sukiennice.png);
+	/* Mam problem z zastosowaniem tego gradientu */
+	background: rgb(25, 24, 24);
+	background: linear-gradient(
+		94deg,
+		rgba(25, 24, 24, 0.9318102240896359) 0%,
+		rgba(33, 25, 19, 0.3519782913165266) 100%
+	);
+	border-radius: 20px;
 }
 
 .user-container {
@@ -36,22 +51,38 @@ body {
 	border-radius: 50%;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1420px) {
 	.users-container {
-		margin-top: 3rem;
-		grid-area: users;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 10% 5%;
+	}
+
+	.details {
+		width: 1000px;
+	}
+}
+
+@media (max-width: 1030px) {
+	.users-container {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 10% 5%;
+	}
+
+	.details {
+		width: 600px;
 	}
 }
 
 @media (max-width: 650px) {
 	.users-container {
-		margin-top: 3rem;
-		grid-area: users;
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 3% 0%;
+	}
+
+	.details {
+		width: 450px;
 	}
 }
