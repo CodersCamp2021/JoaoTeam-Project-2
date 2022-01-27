@@ -1,63 +1,31 @@
 import React from "react"
-import { useState } from "react"
-
-const LANGUAGES = ["any language", "C", "C++", "C#", "Java", "JavaScript", "Kotlin", "PHP", "Python", "Ruby", "Swift"]
+import { useState, useEffect } from "react"
+import { assembleProfiles } from "./Helpers"
 
 export default function SearchWindow() {
-    const [location, updateLocation] = useState("");
-    const [language, updateLanguage] = useState("");
+    const [location, setLocation] = useState("");
+    const [language, setLanguage] = useState("");
     const [ids, setIds] = useState([]);
 
-    function mode(arr) {
-        return arr.sort((a, b) =>
-            arr.filter(v => v === a).length
-            - arr.filter(v => v === b).length
-        ).pop();
-    }
+    handleSubmit = async (event) => {
+        event.preventDefault()
 
-    async function requestLanguages(profiles) {
-        const langs = profiles.map(async function (profile) {
-            let res = await fetch(profile.repos_url);
-            let repos = await res.json();
-            let languages = repos.map(function (x) { return x.language });
-            let language = mode(languages);
-            return { id: profile.id, language: language };
-        });
-        return langs;
-    }
-    async function assembleProfiles(location, language, per_page = 20) {
-        let page = 0;
-        let results = [];
+        console.log(location);
+        console.log(language);
+        assembleProfiles(location, language);
 
-        while (results.length < per_page) {
-            page = page + 1;
-            let res = await fetch(
-                `https://api.github.com/search/users?q=location:${location}&per_page=${per_page}&page=${page}&sort=bestmatch&order=desc`
-            );
-            let json = await res.json();
-            let page_results = requestLanguages(json);
-
-            results = results.concat(page_results.map(function (y) {
-                if (y.language == language) {
-                    return y.id;
-                }
-            }));
-        }
-
-        setIds(results);
-        console.log(ids);
-    }
+    };
 
     return (
         <div className="right-main">
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label htmlFor="location">
                     <h5 className="inline-text">Best coders who live...</h5>
                     <input
                         id="location"
                         value={location}
                         placeholder="anywhere in Poland"
-                        onChange={(e) => updateLocation(e.target.value)}
+                        onChange={(e) => setLocation(e.target.value)}
                         className="input-area" />
                 </label>
                 <label htmlFor="language">
@@ -65,18 +33,23 @@ export default function SearchWindow() {
                     <select
                         id="language"
                         value={language}
-                        onChange={(e) => updateLanguage(e.target.value)}
-                        onBlur={(e) => updateLanguage(e.target.value)}
+                        onChange={(e) => setLanguage(e.target.value)}
+                        onBlur={(e) => setLanguage(e.target.value)}
                     >
-                        <option />
-                        {LANGUAGES.map((language) => (
-                            <option key={language} value={language}>
-                                {language}
-                            </option>
-                        ))}
+                        <option value="">any language</option>
+                        <option value="C">C</option>
+                        <option value="C++">C++</option>
+                        <option value="C#">C#</option>
+                        <option value="Java">Java</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="Kotlin">Kotlin</option>
+                        <option value="PHP">PHP</option>
+                        <option value="Python">Python</option>
+                        <option value="Ruby">Ruby</option>
+                        <option value="Swift">Swift</option>
                     </select>
                 </label>
-                <input type="image" className="submitBtn" onClick={assembleProfiles}>
+                <input type="image" className="submitBtn">
                 </input>
             </form>
         </div >
