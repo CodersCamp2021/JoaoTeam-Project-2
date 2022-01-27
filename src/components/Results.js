@@ -19,15 +19,22 @@ const Results = () => {
 
 	return (
 		<>
-			<div className="users-container">
-				{users.map((user) => {
-					return (
-						<div className="user-container">
-							<img src={user.avatar_url} alt={user.login} />
-							<h1>{user.login}</h1>
-						</div>
-					);
-				})}
+			<div className="results-container">
+				<img className="logo" />
+				<div className="users-container">
+					{users.map((user) => {
+						return (
+							<div className="user-container">
+								<img
+									className="user-img"
+									src={user.avatar_url}
+									alt={user.login}
+								/>
+								<h2>{user.login}</h2>
+							</div>
+						);
+					})}
+				</div>
 			</div>
 		</>
 	);
