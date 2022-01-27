@@ -1,6 +1,8 @@
 import React from "react"
 import { useState } from "react"
 
+const LANGUAGES = ["any language", "C", "C++", "C#", "Java", "JavaScript", "Kotlin", "PHP", "Python", "Ruby", "Swift"]
+
 export default function SearchWindow() {
     const [location, updateLocation] = useState("");
     const [language, updateLanguage] = useState("");
@@ -60,17 +62,24 @@ export default function SearchWindow() {
                 </label>
                 <label htmlFor="language">
                     <h5 className="inline-text">and writes in...</h5>
-                    <input
+                    <select
                         id="language"
                         value={language}
-                        placeholder="any language"
                         onChange={(e) => updateLanguage(e.target.value)}
-                        className="input-area" />
+                        onBlur={(e) => updateLanguage(e.target.value)}
+                    >
+                        <option />
+                        {LANGUAGES.map((language) => (
+                            <option key={language} value={language}>
+                                {language}
+                            </option>
+                        ))}
+                    </select>
                 </label>
                 <input type="image" className="submitBtn" onClick={assembleProfiles}>
                 </input>
             </form>
-        </div>
+        </div >
     )
 }
 

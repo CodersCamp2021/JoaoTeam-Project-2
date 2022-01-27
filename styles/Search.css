@@ -45,3 +45,18 @@
     display: block;
     margin-top: 40px;
 }
+
+#language {
+    width: 320px;
+    height: 44px;
+    border: 1px solid #917A8A;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-weight: normal;
+    font-size: 18px;
+    color: #575757;
+    text-align: center;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
