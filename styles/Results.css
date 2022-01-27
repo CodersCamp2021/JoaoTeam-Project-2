@@ -21,14 +21,19 @@ body {
 	margin-top: 3rem;
 	grid-area: users;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: auto;
 	gap: 15% 6%;
 }
 
-.details {
+.details-container {
 	grid-area: details;
-	width: 1350px;
+	position: relative;
+	color: white;
+}
+
+.details {
+	width: 1000px;
 	margin-top: 3rem;
 	content: url(../styles/UI/sukiennice.png);
 	/* Mam problem z zastosowaniem tego gradientu */
@@ -41,6 +46,13 @@ body {
 	border-radius: 20px;
 }
 
+.details-city-language {
+	position: absolute;
+	bottom: 35px;
+	left: 30px;
+	font-size: 2rem;
+}
+
 .user-container {
 	display: flex;
 	gap: 25px;
@@ -49,18 +61,6 @@ body {
 
 .user-img {
 	border-radius: 50%;
-}
-
-@media (max-width: 1420px) {
-	.users-container {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		gap: 10% 5%;
-	}
-
-	.details {
-		width: 1000px;
-	}
 }
 
 @media (max-width: 1030px) {
@@ -73,6 +73,17 @@ body {
 	.details {
 		width: 600px;
 	}
+
+	.details-city-language {
+		bottom: 20px;
+		left: 30px;
+		font-size: 1.5rem;
+	}
+
+	.user-container {
+		gap: 10% 10%;
+		height: 80px;
+	}
 }
 
 @media (max-width: 650px) {
@@ -84,5 +95,11 @@ body {
 
 	.details {
 		width: 450px;
+	}
+
+	.details-city-language {
+		bottom: 15px;
+		left: 20px;
+		font-size: 1rem;
 	}
 }
