@@ -1,6 +1,6 @@
 import { render } from "react-dom";
 import MainPage from "./components/MainPage/MainPage";
-import Results from "./components/Results";
+import Results from "./components/ResultsPage/Results";
 
 import TestComponent from "./components/TestComponent/TestComponent";
 
