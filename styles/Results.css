@@ -14,7 +14,7 @@ body {
 	grid-template-areas:
 		"logo"
 		"details"
-		"order"
+		"switch"
 		"users";
 }
 
@@ -58,6 +58,12 @@ body {
 	font-size: 2rem;
 }
 
+.switch-container {
+	margin-top: 3rem;
+	grid-area: switch;
+	display: flex;
+}
+
 .user-container {
 	display: flex;
 	gap: 25px;
@@ -66,10 +72,6 @@ body {
 
 .user-img {
 	border-radius: 50%;
-}
-
-.switch-container {
-	user-select: none;
 }
 
 @media (max-width: 1030px) {
