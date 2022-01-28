@@ -19,7 +19,7 @@ body {
 }
 
 .users-container {
-	margin-top: 3rem;
+	margin-top: 3.5rem;
 	grid-area: users;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -34,22 +34,26 @@ body {
 }
 
 .details {
-	width: 1000px;
-	margin-top: 3rem;
-	content: url(../styles/UI/sukiennice.png);
-	/* Mam problem z zastosowaniem tego gradientu */
 	background: rgb(25, 24, 24);
 	background: linear-gradient(
-		94deg,
-		rgba(25, 24, 24, 0.9318102240896359) 0%,
-		rgba(33, 25, 19, 0.3519782913165266) 100%
-	);
+			94deg,
+			rgba(25, 24, 24, 0.9318102240896359) 0%,
+			rgba(33, 25, 19, 0.558158297498687) 55%
+		),
+		url(../styles/UI/sukiennice.png);
+	width: 1000px;
+	height: 100px;
+	margin-top: 3rem;
 	border-radius: 20px;
+}
+
+.logo {
+	user-select: none;
 }
 
 .details-city-language {
 	position: absolute;
-	bottom: 35px;
+	bottom: 30px;
 	left: 30px;
 	font-size: 2rem;
 }
@@ -64,11 +68,8 @@ body {
 	border-radius: 50%;
 }
 
-.switch-btn {
-	margin-top: 2rem;
-	content: url(./UI/switch-1.png);
-	width: 50px;
-	cursor: pointer;
+.switch-container {
+	user-select: none;
 }
 
 @media (max-width: 1030px) {
@@ -79,6 +80,7 @@ body {
 	}
 
 	.details {
+		height: 80px;
 		width: 600px;
 	}
 
@@ -106,8 +108,8 @@ body {
 	}
 
 	.details-city-language {
-		bottom: 15px;
+		bottom: 20px;
 		left: 20px;
-		font-size: 1rem;
+		font-size: 1.5rem;
 	}
 }
