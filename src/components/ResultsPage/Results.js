@@ -23,6 +23,7 @@ const Results = () => {
 		fetchData().catch(console.error);
 	}, [order]);
 
+	// Switch działa, ale po kilku zmianach sortowania wyrzuca error
 	const handleOrder = () => {
 		if (order === "repositories") {
 			setOrder("followers");
