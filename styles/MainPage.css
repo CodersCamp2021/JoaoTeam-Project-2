@@ -31,7 +31,7 @@
 .intro { 
     grid-area: intro; 
     font-weight: normal;
-    font-size: 36px;
+    font-size: 2rem;
     line-height: 49px;
     margin-left: 15vw;
 }
@@ -53,3 +53,33 @@
 .bottom-bar {
     grid-area: bottom-bar; 
 }
+
+/* Responsywność do dopracowania */
+@media screen and (max-width: 650px) {
+
+	.main-page-container{
+		display: grid;
+		grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 0.8fr 2.3fr 0.5fr;
+        grid-template-areas: 
+        "logo"
+        "intro"
+        "right-main"
+        "left-main"
+        "bottom-bar"; 
+        min-width: 650px;
+	}
+
+    .intro { 
+        grid-area: intro; 
+        font-weight: normal;
+        font-size: 1.6rem;
+    }
+
+    .logo {
+        justify-self:normal;
+        margin-left: 20vw;
+        
+    }
+}
+

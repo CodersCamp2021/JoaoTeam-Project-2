@@ -1,7 +1,6 @@
 
 // Wyszukuje najcześciej pojawiający się element w tablicy
 //znajdywanie głównego języka na podstawie repo danego usera
-const API_URL = "https://api.github.com/search/users";
 
 function mode(arr) {
     return arr.sort((a, b) =>
@@ -9,6 +8,8 @@ function mode(arr) {
         - arr.filter(v => v === b).length
     ).pop();
 }
+
+const API_URL = "https://api.github.com/search/users?q=";
 
 // Zwraca listę user id ze skojarzonymi językami 
 async function requestLanguages(profiles) {
@@ -45,4 +46,16 @@ async function assembleProfiles(location, language, per_page = 20) {
     return results;
 }
 
-export { assembleProfiles };
+async function searchUsers(location, language, per_page = 20) {
+    let URL = API_URL + `location:${location}&per_page=${per_page}`
+    if (language != "") {
+        URL = API_URL + `location:${location} language:${language}&per_page=${per_page}`
+    }
+    // console.log(URL);
+    const res = await fetch(URL);
+    const json = await res.json();
+    const users = json.items.map(({ login, avatar_url }) => ({ login, avatar_url }));
+
+    return users;
+}
+export { searchUsers };

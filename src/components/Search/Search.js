@@ -1,19 +1,26 @@
 import React from "react"
-import { useState, useEffect } from "react"
-import { assembleProfiles } from "./Helpers"
+import { useState } from "react"
+import { searchUsers } from "./Helpers"
+
+const API_URL = "https://api.github.com/search/users?q=";
 
 export default function SearchWindow() {
+
     const [location, setLocation] = useState("");
     const [language, setLanguage] = useState("");
-    const [ids, setIds] = useState([]);
+    // const [ids, setIds] = useState([]);
+    const [users, setUsers] = useState([]);
+    const [hasError, setHasError] = useState(false);
 
-    handleSubmit = async (event) => {
+    async function handleSubmit(event) {
         event.preventDefault()
 
         console.log(location);
         console.log(language);
-        assembleProfiles(location, language);
+        // assembleProfiles(location, language);
+        setUsers(searchUsers(location, language));
 
+        console.info(users)
     };
 
     return (

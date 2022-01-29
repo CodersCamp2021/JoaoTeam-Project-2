@@ -1,10 +1,11 @@
 import { render } from "react-dom"
-import MainPage from "./components/MainPage/MainPage"
+import TestComponent from "./components/TestComponent/TestComponent"
+// import MainPage from "./components/MainPage/MainPage"
 
 const App = () => {
     return (
         <div>
-            <MainPage />
+            <TestComponent />
         </div>
     )
 }
