@@ -8,16 +8,13 @@ export default function SearchWindow() {
 
     const [location, setLocation] = useState("");
     const [language, setLanguage] = useState("");
-    // const [ids, setIds] = useState([]);
     const [users, setUsers] = useState([]);
-    const [hasError, setHasError] = useState(false);
 
     async function handleSubmit(event) {
         event.preventDefault()
 
         console.log(location);
         console.log(language);
-        // assembleProfiles(location, language);
         setUsers(searchUsers(location, language));
 
         console.info(users)
