@@ -61,7 +61,7 @@
     margin-left: auto;
 }
 
-/* Responsywność do dopracowania */
+
 @media screen and (max-width: 650px) {
     .right-main {
         width: 324px;

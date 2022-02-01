@@ -5,8 +5,8 @@ const MainPage = () => {
     return (
         <div className="main-page-container">
             <img className="logo" />
-            <h3 className="intro">Hey Buddy! who are you <br />
-                <span className="looking">Looking</span> for?</h3>
+            <h3 className="intro">Hey Buddy! Who are you <br />
+                <span className="looking">looking</span> for?</h3>
             <SearchWindow className="right-main" />
 
         </div>
