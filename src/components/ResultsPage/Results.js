@@ -7,13 +7,13 @@ const Results = () => {
 	const [order, setOrder] = useState("repositories");
 
 	// Draft
-	const city = "Kraków";
+	const location = "Kraków";
 	const language = "Java";
 
 	useEffect(() => {
 		const fetchData = async () => {
 			const data = await fetch(
-				`https://api.github.com/search/users?q=location:${city} language:${language}&per_page=20&sort=${order}`
+				`https://api.github.com/search/users?q=location:${location} language:${language}&per_page=20&sort=${order}`
 			);
 			const json = await data.json();
 			const items = json.items;
@@ -39,7 +39,7 @@ const Results = () => {
 				<div className="details-container">
 					<div className="details"></div>
 					<div className="details-city-language">
-						{city}, {language}
+						{location}, {language}
 					</div>
 				</div>
 				<div>
