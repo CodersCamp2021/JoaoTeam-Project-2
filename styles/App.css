@@ -1,7 +1,8 @@
 @import url(./MainPage.css);
+@import url(./Results.css);
 
 body {
-    background-color: whitesmoke;
-    font-family: 'Nunito', sans-serif;
-    color: #0E0E10;
+	background-color: whitesmoke;
+	font-family: "Nunito", sans-serif;
+	color: #0e0e10;
 }
