@@ -8,7 +8,7 @@ async function searchUsers(location, language, per_page = 20) {
 
     const res = await fetch(URL);
     const json = await res.json();
-    const users = json.items.map(({ login, avatar_url }) => ({ login, avatar_url }));
+    // const users = json.items.map(({ login, avatar_url }) => ({ login, avatar_url }));
 
     return users;
 }

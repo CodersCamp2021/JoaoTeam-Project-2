@@ -1,0 +1,12 @@
+.page-not-found {
+    display: flex;
+    flex-direction: column; 
+    text-align: center;
+}
+
+.error404pic {
+    content: url(./UI/pagenotfound.png);
+    width: 80vh;
+    height: auto;
+    align-self: center;
+}

@@ -1,6 +1,7 @@
 import React from "react"
 import { useState } from "react"
 import { searchUsers } from "./Helpers"
+import { useSearchParams } from "react-router-dom"
 
 const API_URL = "https://api.github.com/search/users?q=";
 
@@ -8,16 +9,17 @@ export default function SearchWindow() {
 
     const [location, setLocation] = useState("");
     const [language, setLanguage] = useState("");
-    const [users, setUsers] = useState([]);
+    // const [users, setUsers] = useState([]);
+    const [searchParams, setSearchParams] = useSearchParams({});
 
     async function handleSubmit(event) {
         event.preventDefault()
 
-        console.log(location);
-        console.log(language);
-        setUsers(searchUsers(location, language));
+        searchUsers(setSearchParams({
+            location: location,
+            language: language
+        }));
 
-        console.info(users)
     };
 
     return (
