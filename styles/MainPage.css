@@ -1,5 +1,7 @@
+@import url(Search.css);
+
 .main-page-container {
-    background: url(../styles/UI/background_gradient.png) no-repeat;
+    background: url(../styles/UI/background_gradient.png) no-repeat center center;
     min-height: 100%;
     min-width: 1024px;
     width: 100%;
@@ -29,7 +31,7 @@
 .intro { 
     grid-area: intro; 
     font-weight: normal;
-    font-size: 36px;
+    font-size: 2rem;
     line-height: 49px;
     margin-left: 15vw;
 }
@@ -38,13 +40,43 @@
     font-weight: bold;
 }
 
+.right-main {
+    grid-area: right-main;
+    margin-left: 14vw;
+}
+
 .left-main {
     grid-area: left-main;
 }
-.right-main {
-    grid-area: right-main;
-}
+
 
 .bottom-bar {
     grid-area: bottom-bar; 
+}
+
+@media screen and (max-width: 650px) {
+
+	.main-page-container{
+		display: grid;
+		grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 0.8fr 2.3fr 0.5fr;
+        grid-template-areas: 
+        "logo"
+        "intro"
+        "right-main"
+        "left-main"
+        "bottom-bar"; 
+        min-width: 650px;
+	}
+
+    .intro { 
+        grid-area: intro; 
+        font-weight: normal;
+        font-size: 1.6rem;
+    }
+
+    .logo {
+        justify-self:normal;
+        margin-left: 20vw;
+    }
 }

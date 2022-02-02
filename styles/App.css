@@ -1,5 +1,6 @@
 @import url(./MainPage.css);
 @import url(./Results.css);
+@import url(./Errors.css);
 
 body {
 	background-color: whitesmoke;

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import Toggle from "./Toggle";
 
 const Results = () => {
@@ -6,15 +7,17 @@ const Results = () => {
 	const [toggled, setToggled] = useState(false);
 	const [order, setOrder] = useState("repositories");
 
-	// Draft
-	const location = "Kraków";
-	const language = "Java";
+	const [searchParams, setSearchParams] = useSearchParams({});
+
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const data = await fetch(
-				`https://api.github.com/search/users?q=location:${location} language:${language}&per_page=20&sort=${order}`
-			);
+			//TODO: dodać przeglądanie dalszych stron wyników
+			let URL = `https://api.github.com/search/users?q=location:${searchParams.get('location')}&per_page=20&sort=${order}`
+			if (searchParams.get('language') != "") {
+				URL = `https://api.github.com/search/users?q=location:${searchParams.get('location')} language:${searchParams.get('language')}&per_page=20&sort=${order}`
+			}
+			const data = await fetch(URL);
 			const json = await data.json();
 			const items = json.items;
 
@@ -23,7 +26,7 @@ const Results = () => {
 		fetchData().catch(console.error);
 	}, [order]);
 
-	// Switch działa, ale po kilku zmianach sortowania wyrzuca error
+	// Switch działa, ale po kilku zmianach sortowania wyrzuca error przez API rate limit
 	const handleOrder = () => {
 		if (order === "repositories") {
 			setOrder("followers");
@@ -39,7 +42,7 @@ const Results = () => {
 				<div className="details-container">
 					<div className="details"></div>
 					<div className="details-city-language">
-						{location}, {language}
+						{searchParams.get('location')}, {searchParams.get('language')}
 					</div>
 				</div>
 				<div>
