@@ -15,7 +15,8 @@ body {
 		"logo"
 		"details"
 		"switch"
-		"users";
+		"users"
+		"pages";
 }
 
 .users-container {
@@ -23,7 +24,7 @@ body {
 	grid-area: users;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: auto;
+	grid-template-rows: repeat(7, 80px);
 	gap: 15% 6%;
 }
 
@@ -71,6 +72,28 @@ body {
 }
 
 .user-img {
+	border-radius: 50%;
+}
+
+.pagination {
+	grid-area: pages;
+	display: flex;
+	justify-content: center;
+	border-top: 2px solid #dadada;
+	padding-left: 70px;
+	padding-right: 100px;
+	margin-top: 550px;
+}
+
+.pagination ul li {
+	list-style-type: none;
+	margin: 0;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.round-style {
+	border: 1px solid #dadada;
 	border-radius: 50%;
 }
 
