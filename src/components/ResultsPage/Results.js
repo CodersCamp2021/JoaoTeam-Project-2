@@ -6,16 +6,24 @@ const Results = () => {
 	const [users, setUsers] = useState([]);
 	const [toggled, setToggled] = useState(false);
 	const [order, setOrder] = useState("repositories");
+	const [page, setPage] = useState(1);
 
 	const [searchParams, setSearchParams] = useSearchParams({});
 
+	const pages = [1, 2, 3, 4, 5];
 
 	useEffect(() => {
 		const fetchData = async () => {
 			//TODO: dodać przeglądanie dalszych stron wyników
-			let URL = `https://api.github.com/search/users?q=location:${searchParams.get('location')}&per_page=20&sort=${order}`
-			if (searchParams.get('language') != "") {
-				URL = `https://api.github.com/search/users?q=location:${searchParams.get('location')} language:${searchParams.get('language')}&per_page=20&sort=${order}`
+			let URL = `https://api.github.com/search/users?q=location:${searchParams.get(
+				"location"
+			)}&per_page=20&sort=${order}`;
+			if (searchParams.get("language") != "") {
+				URL = `https://api.github.com/search/users?q=location:${searchParams.get(
+					"location"
+				)} language:${searchParams.get(
+					"language"
+				)}&per_page=20&page=${page}&sort=${order}`;
 			}
 			const data = await fetch(URL);
 			const json = await data.json();
@@ -24,7 +32,7 @@ const Results = () => {
 			setUsers(items);
 		};
 		fetchData().catch(console.error);
-	}, [order]);
+	}, [order, page]);
 
 	// Switch działa, ale po kilku zmianach sortowania wyrzuca error przez API rate limit
 	const handleOrder = () => {
@@ -42,7 +50,7 @@ const Results = () => {
 				<div className="details-container">
 					<div className="details"></div>
 					<div className="details-city-language">
-						{searchParams.get('location')}, {searchParams.get('language')}
+						{searchParams.get("location")}, {searchParams.get("language")}
 					</div>
 				</div>
 				<div>
@@ -53,7 +61,6 @@ const Results = () => {
 							onChange={handleOrder}
 						/>
 						<div>Followers</div>
-						{console.log(order)}
 					</div>
 				</div>
 				<div className="users-container">
@@ -68,6 +75,21 @@ const Results = () => {
 								/>
 								<h2>{user.login}</h2>
 							</div>
+						);
+					})}
+				</div>
+				<div className="pagination">
+					{pages.map((page) => {
+						return (
+							<ul>
+								<li
+									onClick={(e) => {
+										setPage(page);
+									}}
+								>
+									{page}
+								</li>
+							</ul>
 						);
 					})}
 				</div>
