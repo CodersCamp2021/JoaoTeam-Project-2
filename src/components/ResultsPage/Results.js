@@ -1,12 +1,21 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Toggle from "./Toggle";
+import { useNavigate } from "react-router-dom";
 
 const Results = () => {
 	const [users, setUsers] = useState([]);
 	const [toggled, setToggled] = useState(false);
 	const [order, setOrder] = useState("repositories");
 	const [page, setPage] = useState(1);
+	let navigate = useNavigate();
+
+	async function handleClick(event) {
+		event.preventDefault();
+		navigate({
+			pathname: "/",
+		});
+	}
 
 	const [searchParams, setSearchParams] = useSearchParams({});
 
@@ -46,7 +55,7 @@ const Results = () => {
 	return (
 		<>
 			<div className="results-container">
-				<img className="logo" />
+				<img className="logo" onClick={handleClick} />
 				<div className="details-container">
 					<div className="details"></div>
 					<div className="details-city-language">
