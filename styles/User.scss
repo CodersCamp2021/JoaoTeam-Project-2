@@ -5,6 +5,25 @@
 
 	color: #575757;
 
+	position: relative;
+
+	&__container {
+		display: grid;
+		grid-template-rows: auto 1fr;
+		align-items: center;
+		justify-items: center;
+		height: 100vh;
+	}
+
+	&__logo-link {
+		display: grid;
+		text-align: center;
+
+		.logo {
+			margin-left: 0;
+		}
+	}
+
 	&__img {
 		text-align: right;
 		display: grid;
@@ -39,6 +58,7 @@
 	}
 
 	&__button {
+		max-width: 100vw;
 		grid-column: span 2;
 		display: flex;
 		justify-content: center;
@@ -50,6 +70,12 @@
 		grid-template-columns: 1fr;
 		justify-items: center;
 		grid-gap: 0.5em;
+
+		&__container {
+			display: grid;
+			grid-gap: 1em;
+			height: auto;
+		}
 
 		&__img {
 			justify-items: center;
