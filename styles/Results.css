@@ -50,6 +50,7 @@ body {
 
 .logo {
 	user-select: none;
+	cursor: pointer;
 }
 
 .details-city-language {
