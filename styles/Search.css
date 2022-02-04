@@ -1,0 +1,85 @@
+.right-main {
+    box-sizing: border-box;
+    width: 471px;
+    height: 300px;
+    padding-top: 30px;
+    background: #F5F5F5;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    column-count: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.inline-text {
+    font-size: 24px;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}
+
+.input-area {
+    width: 320px;
+    height: 44px;
+    border: 1px solid #917A8A;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-weight: normal;
+    font-size: 18px;
+    color: #575757;
+    text-align: center;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.submitBtn {
+    width: 320px;
+    height: 70px;
+    border: 1px solid #F5F5F5;
+    box-sizing: border-box;
+    border-radius: 20px;
+    content: url(./UI/searchButton.png);
+    display: block;
+    margin-top: 40px;
+}
+
+#language {
+    width: 320px;
+    height: 44px;
+    border: 1px solid #917A8A;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-weight: normal;
+    font-size: 18px;
+    color: #575757;
+    text-align: center;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+@media screen and (max-width: 650px) {
+    .right-main {
+        width: 324px;
+        height: 282px;
+        padding-top: 25px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .input-area {
+        width: 217px;
+    }
+
+    #language {
+        width: 217px;
+    }
+	
+    .submitBtn {
+        width: 260px;
+    }
+}
