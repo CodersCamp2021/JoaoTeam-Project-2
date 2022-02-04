@@ -3,6 +3,7 @@ import { render } from "react-dom"
 import MainPage from "./components/MainPage/MainPage"
 import Results from "./components/ResultsPage/Results"
 import PageNotFound from "./components/Errors/PageNotFound"
+import User from "./components/User/User"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 
 const App = () => {
@@ -11,6 +12,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={< MainPage />} />
                 <Route path="/results" element={<Results />} />
+                <Route path="/user/:login" element={<User />} />
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
         </Router >
