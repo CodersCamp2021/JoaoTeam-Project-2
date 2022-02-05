@@ -17,7 +17,7 @@ function Ranking() {
 			setUsers(items);
 		}
 		requestData().catch(console.error);
-	}, []);
+	}, [order]);
 
 	const handleOrder = () => {
 		if (order === "repositories") {
@@ -32,9 +32,9 @@ function Ranking() {
 			<div className="results-container">
 				<img className="logo" />
 				<div className="details-container">
-					<div className="details"></div>
+					<div className="details ranking"></div>
 					<div className="details-city-language">
-						Top 20 in Poland - Followers
+						Top 100 in Poland
 					</div>
 				</div>
 				<div>
