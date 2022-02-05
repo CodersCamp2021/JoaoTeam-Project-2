@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Toggle from "./ResultsPage/Toggle.js"
+import Toggle from "../ResultsPage/Toggle.js"
 
 function Ranking() {
 	const [users, setUsers] = useState([]);

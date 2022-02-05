@@ -4,20 +4,20 @@ import MainPage from "./components/MainPage/MainPage";
 import Results from "./components/ResultsPage/Results";
 import PageNotFound from "./components/Errors/PageNotFound";
 import User from "./components/User/User";
+import Ranking from "./components/Ranking/Ranking";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Ranking from "./components/Ranking";
 
 const App = () => {
 	return (
-		<Ranking />
-		/*<Router>
+		<Router>
             <Routes>
                 <Route path="/" element={< MainPage />} />
                 <Route path="/results" element={<Results />} />
                 <Route path="/user/:login" element={<User />} />
+                <Route path="/ranking" element={<Ranking />} />
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
-        </Router >*/
+        </Router >
 	);
 };
 
