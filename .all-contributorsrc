@@ -59,5 +59,6 @@
       ]
     }
   ],
-  "contributorsPerLine": 5
+  "contributorsPerLine": 5,
+  "contributorsSortAlphabetically": true
 }
