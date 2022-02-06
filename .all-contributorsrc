@@ -11,8 +11,17 @@
   "commitConvention": "none",
   "contributors": [
     {
+      "login": "JK-Sebastiao",
+      "name": "João Kiakumbo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/14078333?v=4",
+      "profile": "https://github.com/JK-Sebastiao",
+      "contributions": [
+        "mentoring"
+      ]
+    },
+    {
       "login": "J-emi",
-      "name": "Justyna",
+      "name": "Justyna Chmielińska",
       "avatar_url": "https://avatars.githubusercontent.com/u/89035278?v=4",
       "profile": "https://github.com/J-emi",
       "contributions": [
@@ -28,15 +37,6 @@
       "contributions": [
         "code",
         "design"
-      ]
-    },
-    {
-      "login": "JK-Sebastiao",
-      "name": "João Kiakumbo",
-      "avatar_url": "https://avatars.githubusercontent.com/u/14078333?v=4",
-      "profile": "https://github.com/JK-Sebastiao",
-      "contributions": [
-        "mentoring"
       ]
     },
     {
