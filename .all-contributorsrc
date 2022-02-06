@@ -1,0 +1,14 @@
+{
+  "projectName": "JoaoTeam-Project-2",
+  "projectOwner": "CodersCamp2021",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [],
+  "contributorsPerLine": 5
+}
