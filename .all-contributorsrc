@@ -19,6 +19,16 @@
         "code",
         "projectManagement"
       ]
+    },
+    {
+      "login": "itspatys",
+      "name": "Patryk Pierzchała",
+      "avatar_url": "https://avatars.githubusercontent.com/u/58817270?v=4",
+      "profile": "https://github.com/itspatys",
+      "contributions": [
+        "code",
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 5
