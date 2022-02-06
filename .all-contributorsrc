@@ -29,6 +29,15 @@
         "code",
         "design"
       ]
+    },
+    {
+      "login": "JK-Sebastiao",
+      "name": "João Kiakumbo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/14078333?v=4",
+      "profile": "https://github.com/JK-Sebastiao",
+      "contributions": [
+        "mentoring"
+      ]
     }
   ],
   "contributorsPerLine": 5
