@@ -1,7 +1,17 @@
 import { useEffect, useState } from "react";
 import Toggle from "../ResultsPage/Toggle.js"
+import { useNavigate } from "react-router-dom"
 
 function Ranking() {
+
+	let navigate = useNavigate();
+
+    async function handleClick(event) {
+        navigate({
+            pathname: "/",
+        });
+    }
+
 	const [users, setUsers] = useState([]);
 	const [toggled, setToggled] = useState(false);
 	const [order, setOrder] = useState("repositories");
@@ -9,7 +19,7 @@ function Ranking() {
 	useEffect(() => {
 		async function requestData() {
 			const res = await fetch(
-				`https://api.github.com/search/users?q=location:$poland&per_page=20&sort=${order}`
+				`https://api.github.com/search/users?q=location:$poland&per_page=21&sort=${order}`
 			);
 			const json = await res.json();
 			const items = json.items;
@@ -30,7 +40,7 @@ function Ranking() {
 	return (
 		<div>
 			<div className="results-container">
-				<img className="logo" />
+				<img className="logo" onClick={handleClick} />
 				<div className="details-container">
 					<div className="details ranking"></div>
 					<div className="details-city-language">
