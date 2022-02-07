@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Toggle from "./Toggle";
 import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
+import Pagination from "./Pagination";
 
 const Results = () => {
 	const [users, setUsers] = useState([]);
 	const [toggled, setToggled] = useState(false);
 	const [order, setOrder] = useState("repositories");
-	const [page, setPage] = useState(1);
+
 	let navigate = useNavigate();
 
 	async function handleClick(event) {
@@ -18,8 +20,6 @@ const Results = () => {
 	}
 
 	const [searchParams, setSearchParams] = useSearchParams({});
-
-	const pages = [1, 2, 3, 4, 5];
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -32,7 +32,7 @@ const Results = () => {
 					"location"
 				)} language:${searchParams.get(
 					"language"
-				)}&per_page=20&page=${page}&sort=${order}`;
+				)}&per_page=21&page=1&sort=${order}`;
 			}
 			const data = await fetch(URL);
 			const json = await data.json();
@@ -41,7 +41,7 @@ const Results = () => {
 			setUsers(items);
 		};
 		fetchData().catch(console.error);
-	}, [order, page]);
+	}, [order]);
 
 	// Switch działa, ale po kilku zmianach sortowania wyrzuca error przez API rate limit
 	const handleOrder = () => {
@@ -87,21 +87,7 @@ const Results = () => {
 						);
 					})}
 				</div>
-				<div className="pagination">
-					{pages.map((page) => {
-						return (
-							<ul>
-								<li
-									onClick={(e) => {
-										setPage(page);
-									}}
-								>
-									{page}
-								</li>
-							</ul>
-						);
-					})}
-				</div>
+				<Pagination />
 			</div>
 		</>
 	);
