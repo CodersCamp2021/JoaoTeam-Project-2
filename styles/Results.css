@@ -15,7 +15,8 @@ body {
 		"logo"
 		"details"
 		"switch"
-		"users";
+		"users"
+		"pagination";
 }
 
 .users-container {
@@ -23,8 +24,8 @@ body {
 	grid-area: users;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: repeat(7, 80px);
-	gap: 15% 6%;
+	grid-template-rows: auto;
+	gap: 10% 10%;
 }
 
 .details-container {
@@ -75,7 +76,32 @@ body {
 	border-radius: 50%;
 }
 
-@media (max-width: 1030px) {
+.pageNumbers {
+	grid-area: pagination;
+	margin-top: 10%;
+	border-top: 1px solid #575757;
+	width: 800px;
+}
+
+.pageNumbers ul {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+}
+
+.pageNumbers ul li {
+	padding: 10px;
+	cursor: pointer;
+	margin: 5px;
+	padding: 2px 8px;
+}
+
+.pageNumbers li.active {
+	border: 1px solid #575757;
+	border-radius: 50%;
+}
+
+@media (max-width: 1300px) {
 	.users-container {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -97,9 +123,14 @@ body {
 		gap: 10% 10%;
 		height: 80px;
 	}
+
+	.pageNumbers {
+		width: 500px;
+		margin-top: 30%;
+	}
 }
 
-@media (max-width: 650px) {
+@media (max-width: 750px) {
 	.users-container {
 		display: grid;
 		grid-template-columns: 1fr;
@@ -114,5 +145,10 @@ body {
 		bottom: 20px;
 		left: 20px;
 		font-size: 1.5rem;
+	}
+
+	.pageNumbers {
+		width: 300px;
+		margin-top: 70%;
 	}
 }
