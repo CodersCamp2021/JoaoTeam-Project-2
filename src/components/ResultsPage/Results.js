@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Toggle from "./Toggle";
 import { useNavigate } from "react-router-dom";
-import { useRef } from "react";
 import Pagination from "./Pagination";
 
 const Results = () => {
