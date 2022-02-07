@@ -1,4 +1,4 @@
-.right-main {
+.left-main {
 	box-sizing: border-box;
 	width: 471px;
 	height: 300px;
@@ -20,7 +20,7 @@
 	margin: 10px;
 }
 
-.popularBtn {
+.popular-btn {
 	width: 320px;
 	height: 70px;
 	border: 1px solid #f5f5f5;
@@ -40,11 +40,7 @@
 		margin-right: auto;
 	}
 
-	.input-area {
-		width: 217px;
-	}
-
-	.popularBtn {
+	.popular-btn {
 		width: 260px;
 	}
 }

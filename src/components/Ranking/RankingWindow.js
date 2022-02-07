@@ -12,10 +12,10 @@ export default function RankingWindow() {
     }
 
     return (
-        <div>
+        <div className="left-main">
             <div>
-                <h5>Peepee poopoo</h5>
-                <input type="image" className="popularBtn" onClick={handleClick}>
+                <h5 className="inline-text">...or just show me...</h5>
+                <input type="image" className="popular-btn" onClick={handleClick}>
                 </input>
             </div>
         </div >
