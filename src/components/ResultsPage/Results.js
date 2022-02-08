@@ -24,8 +24,6 @@ const Results = () => {
 		setcurrentPage(Number(event.target.id));
 	}
 
-	console.log(users);
-
 	let navigate = useNavigate();
 
 	async function backToHomePage(event) {
