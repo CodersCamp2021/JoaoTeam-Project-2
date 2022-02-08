@@ -1,0 +1,154 @@
+body {
+	box-sizing: border-box;
+}
+
+.results-container {
+	color: #575757;
+}
+
+.results-container {
+	display: grid;
+	justify-items: center;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	grid-template-areas:
+		"logo"
+		"details"
+		"switch"
+		"users"
+		"pagination";
+}
+
+.users-container {
+	margin-top: 3.5rem;
+	grid-area: users;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	gap: 10% 10%;
+}
+
+.details-container {
+	grid-area: details;
+	position: relative;
+	color: white;
+}
+
+.details {
+	background: rgb(25, 24, 24);
+	background: linear-gradient(
+			94deg,
+			rgba(25, 24, 24, 0.9318102240896359) 0%,
+			rgba(33, 25, 19, 0.558158297498687) 55%
+		),
+		url(../styles/UI/sukiennice.png);
+	width: 1000px;
+	height: 100px;
+	margin-top: 3rem;
+	border-radius: 20px;
+}
+
+.logo {
+	user-select: none;
+	cursor: pointer;
+}
+
+.details-city-language {
+	position: absolute;
+	bottom: 30px;
+	left: 30px;
+	font-size: 2rem;
+}
+
+.switch-container {
+	margin-top: 3rem;
+	grid-area: switch;
+	display: flex;
+}
+
+.user-container {
+	display: flex;
+	gap: 25px;
+	height: 100px;
+}
+
+.user-img {
+	border-radius: 50%;
+}
+
+.pageNumbers {
+	grid-area: pagination;
+	margin-top: 10%;
+	border-top: 1px solid #575757;
+	width: 800px;
+}
+
+.pageNumbers ul {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+}
+
+.pageNumbers ul li {
+	padding: 10px;
+	cursor: pointer;
+	margin: 5px;
+	padding: 2px 8px;
+}
+
+.pageNumbers li.active {
+	border: 1px solid #575757;
+	border-radius: 50%;
+}
+
+@media (max-width: 1300px) {
+	.users-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 10% 10%;
+	}
+
+	.details {
+		height: 80px;
+		width: 600px;
+	}
+
+	.details-city-language {
+		bottom: 20px;
+		left: 30px;
+		font-size: 1.5rem;
+	}
+
+	.user-container {
+		gap: 10% 10%;
+		height: 80px;
+	}
+
+	.pageNumbers {
+		width: 500px;
+		margin-top: 30%;
+	}
+}
+
+@media (max-width: 750px) {
+	.users-container {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 3% 0%;
+	}
+
+	.details {
+		width: 450px;
+	}
+
+	.details-city-language {
+		bottom: 20px;
+		left: 20px;
+		font-size: 1.5rem;
+	}
+
+	.pageNumbers {
+		width: 300px;
+		margin-top: 70%;
+	}
+}

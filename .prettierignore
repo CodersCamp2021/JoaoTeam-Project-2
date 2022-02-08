@@ -5,7 +5,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
-package-lock.json
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -104,6 +103,3 @@ dist
 
 # TernJS port file
 .tern-port
-
-# Apple Desktop Services Store files
-.DS_Store

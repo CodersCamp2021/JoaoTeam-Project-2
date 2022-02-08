@@ -1,0 +1,10 @@
+@import url(./MainPage.css);
+@import url(./Results.css);
+@import url(./Errors.css);
+
+body {
+	background-color: whitesmoke;
+	font-family: "Nunito", sans-serif;
+	color: #0e0e10;
+	margin: 0;
+}
