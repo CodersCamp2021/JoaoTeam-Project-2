@@ -61,7 +61,7 @@ function Ranking() {
 						{console.log(order)}
 					</div>
 				</div>
-				<div className="users-container">
+				<div className="users-container-ranking">
 					{users.map((user, index) => {
 						return (
 							<div className="user-container" key={user.login}>

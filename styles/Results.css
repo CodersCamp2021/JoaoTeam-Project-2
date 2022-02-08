@@ -27,6 +27,15 @@ body {
 	gap: 15% 6%;
 }
 
+.users-container-ranking {
+	margin: 3.5rem 7rem 0;
+	grid-area: users;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	gap: 15% 6%;
+}
+
 .details-container {
 	grid-area: details;
 	position: relative;
