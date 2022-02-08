@@ -34,23 +34,19 @@ const Results = () => {
 	}
 
 	const [searchParams, setSearchParams] = useSearchParams({});
-	let conditional = "Poland, any language"
-	let URL = `https://api.github.com/search/users?q=location:Poland`;
+
+	let location = "Poland"
+	let language = "any language"
 
 	if (searchParams.get("location") != "") {
-		URL = `https://api.github.com/search/users?q=location:${searchParams.get("location")}`;
+		location = searchParams.get("location");
 	}
+
+	let URL = `https://api.github.com/search/users?q=location:${location}`;
+
 	if (searchParams.get("language") != "") {
-		URL = URL + ` language:${searchParams.get("language")}`;
-	}
-	if ((searchParams.get("location") != "") && (searchParams.get("language") != "")) {
-		conditional = ", ";
-	}
-	if ((searchParams.get("location") == "") && (searchParams.get("language") != "")) {
-		conditional = "Poland, ";
-	}
-	if ((searchParams.get("location") != "") && (searchParams.get("language") == "")) {
-		conditional = ", any language";
+		language = searchParams.get("language");
+		URL = URL + ` language:${language}`;
 	}
 
 	useEffect(() => {
@@ -79,7 +75,7 @@ const Results = () => {
 				<div className="details-container">
 					<div className="details"></div>
 					<div className="details-city-language">
-						{searchParams.get("location")}{conditional}{searchParams.get("language")}
+						{location}, {language}
 					</div>
 				</div>
 				<div>
