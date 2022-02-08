@@ -27,6 +27,7 @@ function Ranking() {
 			setUsers(items);
 		}
 		requestData().catch(console.error);
+		
 	}, [order]);
 
 	const handleOrder = () => {
