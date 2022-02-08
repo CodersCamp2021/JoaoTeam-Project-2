@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Toggle from "../ResultsPage/Toggle.js"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 
 function Ranking() {
 
@@ -41,7 +41,9 @@ function Ranking() {
 	return (
 		<div>
 			<div className="results-container">
-				<img className="logo" onClick={handleClick} />
+			<Link to="/">
+				<img className="logo" />
+			</Link>
 				<div className="details-container">
 					<div className="details ranking"></div>
 					<div className="details-city-language">
