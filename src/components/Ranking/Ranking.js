@@ -19,7 +19,7 @@ function Ranking() {
 	useEffect(() => {
 		async function requestData() {
 			const res = await fetch(
-				`https://api.github.com/search/users?q=location:$poland&per_page=21&sort=${order}`
+				`https://api.github.com/search/users?q=location:$poland&per_page=30&sort=${order}`
 			);
 			const json = await res.json();
 			const items = json.items;
@@ -62,9 +62,10 @@ function Ranking() {
 					</div>
 				</div>
 				<div className="users-container">
-					{users.map((user) => {
+					{users.map((user, index) => {
 						return (
 							<div className="user-container" key={user.login}>
+								<h2>#{index + 1}</h2>
 								<img
 									className="user-img"
 									src={user.avatar_url}
