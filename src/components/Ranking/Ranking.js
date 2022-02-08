@@ -47,7 +47,7 @@ function Ranking() {
 				<div className="details-container">
 					<div className="details ranking"></div>
 					<div className="details-city-language">
-						Top 100 in Poland
+						Top 30 in Poland
 					</div>
 				</div>
 				<div>
