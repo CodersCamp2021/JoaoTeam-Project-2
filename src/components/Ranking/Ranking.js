@@ -64,12 +64,11 @@ function Ranking() {
 				<div className="users-container">
 					{users.map((user) => {
 						return (
-							<div className="user-container">
+							<div className="user-container" key={user.login}>
 								<img
 									className="user-img"
 									src={user.avatar_url}
 									alt={user.login}
-									key={user.login}
 								/>
 								<h2>{user.login}</h2>
 							</div>
