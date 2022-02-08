@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    name: "Build Star Wars Quiz application"
+    name: "Build Polish on Github application"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
-      - run: npm ci
+      - run: npm install
       - run: npm run build --if-present
       - run: npm test
       - uses: actions/upload-artifact@v1
