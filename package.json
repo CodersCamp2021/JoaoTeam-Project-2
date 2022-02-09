@@ -1,4 +1,5 @@
 {
+  "homepage": "https://coderscamp2021.github.io/JoaoTeam-Project-2",
   "name": "joaoteam-project-2",
   "source": "src/index.html",
   "version": "1.0.0",
@@ -20,7 +21,6 @@
   "bugs": {
     "url": "https://github.com/CodersCamp2021/JoaoTeam-Project-2/issues"
   },
-  "homepage": "https://github.com/CodersCamp2021/JoaoTeam-Project-2#readme",
   "devDependencies": {
     "@babel/plugin-syntax-jsx": "^7.16.7",
     "@babel/preset-env": "^7.16.8",
