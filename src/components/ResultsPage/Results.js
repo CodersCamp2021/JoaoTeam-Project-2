@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Toggle from "./Toggle";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Results = () => {
 	const [users, setUsers] = useState([]);
@@ -22,15 +22,6 @@ const Results = () => {
 
 	function handleClick(event) {
 		setcurrentPage(Number(event.target.id));
-	}
-
-	let navigate = useNavigate();
-
-	function backToHomePage(event) {
-		event.preventDefault();
-		navigate({
-			pathname: "/",
-		});
 	}
 
 	const [searchParams, setSearchParams] = useSearchParams({});
@@ -71,7 +62,9 @@ const Results = () => {
 	return (
 		<>
 			<div className="results-container">
-				<img className="logo" onClick={backToHomePage} />
+				<Link to="/">
+					<img className="logo" />
+				</Link>
 				<div className="details-container">
 					<div className="details"></div>
 					<div className="details-city-language">
@@ -91,16 +84,17 @@ const Results = () => {
 				<div className="users-container">
 					{currentItems.map((user) => {
 						return (
-							<div className="user-container">
-								<img
-									className="user-img"
-									src={user.avatar_url}
-									alt={user.login}
-									key={user.login}
-									onClick={() => navigate({ pathname: `/user/${user.login}` })}
-								/>
-								<h2>{user.login}</h2>
-							</div>
+							<Link to={`/user/${user.login}`} className="link-style">
+								<div className="user-container">
+									<img
+										className="user-img"
+										src={user.avatar_url}
+										alt={user.login}
+										key={user.login}
+									/>
+									<h2>{user.login}</h2>
+								</div>
+							</Link>
 						);
 					})}
 				</div>
