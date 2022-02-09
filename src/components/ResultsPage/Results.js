@@ -1,21 +1,50 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Toggle from "./Toggle";
+import { useNavigate } from "react-router-dom";
 
 const Results = () => {
 	const [users, setUsers] = useState([]);
 	const [toggled, setToggled] = useState(false);
 	const [order, setOrder] = useState("repositories");
 
-	const [searchParams, setSearchParams] = useSearchParams({});
+	const [currentPage, setcurrentPage] = useState(1);
+	const [itemsPerPage, setitemsPerPage] = useState(12);
 
+	const pages = [];
+	for (let i = 1; i <= Math.ceil(users.length / itemsPerPage); i++) {
+		pages.push(i);
+	}
+
+	const indexOfLastItem = currentPage * itemsPerPage;
+	const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+	const currentItems = users.slice(indexOfFirstItem, indexOfLastItem);
+
+	function handleClick(event) {
+		setcurrentPage(Number(event.target.id));
+	}
+
+	let navigate = useNavigate();
+
+	async function backToHomePage(event) {
+		event.preventDefault();
+		navigate({
+			pathname: "/",
+		});
+	}
+
+	const [searchParams, setSearchParams] = useSearchParams({});
 
 	useEffect(() => {
 		const fetchData = async () => {
 			//TODO: dodać przeglądanie dalszych stron wyników
-			let URL = `https://api.github.com/search/users?q=location:${searchParams.get('location')}&per_page=20&sort=${order}`
-			if (searchParams.get('language') != "") {
-				URL = `https://api.github.com/search/users?q=location:${searchParams.get('location')} language:${searchParams.get('language')}&per_page=20&sort=${order}`
+			let URL = `https://api.github.com/search/users?q=location:${searchParams.get(
+				"location"
+			)}&sort=${order}`;
+			if (searchParams.get("language") != "") {
+				URL = `https://api.github.com/search/users?q=location:${searchParams.get(
+					"location"
+				)} language:${searchParams.get("language")}&sort=${order}`;
 			}
 			const data = await fetch(URL);
 			const json = await data.json();
@@ -26,7 +55,6 @@ const Results = () => {
 		fetchData().catch(console.error);
 	}, [order]);
 
-	// Switch działa, ale po kilku zmianach sortowania wyrzuca error przez API rate limit
 	const handleOrder = () => {
 		if (order === "repositories") {
 			setOrder("followers");
@@ -38,11 +66,11 @@ const Results = () => {
 	return (
 		<>
 			<div className="results-container">
-				<img className="logo" />
+				<img className="logo" onClick={backToHomePage} />
 				<div className="details-container">
 					<div className="details"></div>
 					<div className="details-city-language">
-						{searchParams.get('location')}, {searchParams.get('language')}
+						{searchParams.get("location")}, {searchParams.get("language")}
 					</div>
 				</div>
 				<div>
@@ -53,11 +81,10 @@ const Results = () => {
 							onChange={handleOrder}
 						/>
 						<div>Followers</div>
-						{console.log(order)}
 					</div>
 				</div>
 				<div className="users-container">
-					{users.map((user) => {
+					{currentItems.map((user) => {
 						return (
 							<div className="user-container">
 								<img
@@ -70,6 +97,22 @@ const Results = () => {
 							</div>
 						);
 					})}
+				</div>
+				<div className="pageNumbers">
+					<ul>
+						{pages.map((number) => {
+							return (
+								<li
+									key={number}
+									id={number}
+									onClick={handleClick}
+									className={currentPage == number ? "active" : null}
+								>
+									{number}
+								</li>
+							);
+						})}
+					</ul>
 				</div>
 			</div>
 		</>
