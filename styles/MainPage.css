@@ -1,43 +1,51 @@
 @import url(Search.css);
 @import url(RankingWindow.css);
 
-.main-page-container {
+.main-page-background {
+	box-sizing: border-box;
 	background: url(../styles/UI/background_gradient.png) no-repeat center center;
+	background-size: cover;
 	min-height: 100%;
-	min-width: 1024px;
-	width: 100%;
-	height: auto;
+	min-width: 100%;
 	position: fixed;
+	display: grid;
+	place-self: center;
 	left: 0;
 	top: 0;
-	background-size: cover;
+}
+
+.main-page-container {
+	height: 90vh;
+	width: 90vw;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 0.4fr 0.8fr 2.3fr 0.5fr;
-	gap: 5% 0%;
+	grid-template-rows: 0.fr 4fr;
+	gap: 0% 10%;
 	grid-template-areas:
 		"logo logo"
-		"intro intro"
-		"right-main left-main"
-		"bottom-bar bottom-bar";
+		"right-main left-main";
+	margin-top: 1%;
 }
 
 .logo {
-	content: url(./UI/logo.png);
+	content: url(./UI/logo.svg);
+	height: 50px;
 }
 
-.logo-link {
+a.logo-link {
 	grid-area: logo;
 	justify-self: center;
-	margin-top: 4vh;
+
 }
 
 .intro {
 	grid-area: intro;
+	margin-top: 0%;
+	padding-top: 0%;
+	padding-bottom: 10vh;
 	font-weight: normal;
 	font-size: 2rem;
 	line-height: 49px;
-	margin-left: 15vw;
 }
 
 .looking {
@@ -46,39 +54,40 @@
 
 .right-main {
 	grid-area: right-main;
+	display: flex;
+	flex-direction: column;
 	margin-left: 14vw;
+	padding: 0%;
 }
 
 .left-main {
 	grid-area: left-main;
 }
 
-.bottom-bar {
-	grid-area: bottom-bar;
-}
-
 @media screen and (max-width: 650px) {
 	.main-page-container {
+		height: 100%;
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-template-rows: 0.4fr 0.8fr 2.3fr 0.5fr;
+		grid-template-rows: 0.2fr 0.5fr 0.5fr;
+		gap: 3% 0%;
 		grid-template-areas:
 			"logo"
-			"intro"
 			"right-main"
-			"left-main"
-			"bottom-bar";
-		min-width: 650px;
+			"left-main";
+		justify-self: center;
 	}
 
 	.intro {
 		grid-area: intro;
 		font-weight: normal;
 		font-size: 1.6rem;
+		margin-left: auto;
+    	margin-right: auto;
+		padding-bottom: 3vh;
 	}
 
-	.logo {
-		justify-self: normal;
-		margin-left: 20vw;
+	.right-main {
+		margin-left: 0vw;
 	}
 }

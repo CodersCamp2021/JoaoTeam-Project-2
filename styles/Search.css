@@ -1,5 +1,4 @@
-.right-main {
-    box-sizing: border-box;
+.search-window {
     width: 471px;
     height: 300px;
     padding-top: 30px;
@@ -36,14 +35,8 @@
 }
 
 .submitBtn {
-    width: 320px;
-    height: 70px;
-    border: 1px solid #F5F5F5;
-    box-sizing: border-box;
-    border-radius: 20px;
-    content: url(./UI/searchButton.png);
-    display: block;
-    margin-top: 40px;
+    content: url(./UI/searchButton.svg);
+    margin-top: 20%;
 }
 
 #language {
@@ -63,9 +56,7 @@
 
 
 @media screen and (max-width: 650px) {
-    .right-main {
-        width: 324px;
-        height: 282px;
+    .search-window {
         padding-top: 25px;
         margin-left: auto;
         margin-right: auto;
@@ -78,8 +69,5 @@
     #language {
         width: 217px;
     }
-	
-    .submitBtn {
-        width: 260px;
-    }
+
 }
