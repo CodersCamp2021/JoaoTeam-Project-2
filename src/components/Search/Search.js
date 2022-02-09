@@ -26,7 +26,7 @@ export default function SearchWindow() {
         <div className="right-main">
             <form onSubmit={handleSubmit}>
                 <label htmlFor="location">
-                    <h5 className="inline-text">Best coders who live in...</h5>
+                    <h5 className="inline-text">Best coders who live...</h5>
                     <input
                         id="location"
                         value={location}
