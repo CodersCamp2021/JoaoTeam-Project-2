@@ -35,18 +35,23 @@ const Results = () => {
 
 	const [searchParams, setSearchParams] = useSearchParams({});
 
+	let location = "Poland"
+	let language = "any language"
+
+	if (searchParams.get("location") != "") {
+		location = searchParams.get("location");
+	}
+
+	let URL = `https://api.github.com/search/users?q=location:${location}`;
+
+	if (searchParams.get("language") != "") {
+		language = searchParams.get("language");
+		URL = URL + ` language:${language}`;
+	}
+
 	useEffect(() => {
 		const fetchData = async () => {
-			//TODO: dodać przeglądanie dalszych stron wyników
-			let URL = `https://api.github.com/search/users?q=location:${searchParams.get(
-				"location"
-			)}&sort=${order}`;
-			if (searchParams.get("language") != "") {
-				URL = `https://api.github.com/search/users?q=location:${searchParams.get(
-					"location"
-				)} language:${searchParams.get("language")}&sort=${order}`;
-			}
-			const data = await fetch(URL);
+			const data = await fetch(URL + `&sort=${order}`);
 			const json = await data.json();
 			const items = json.items;
 
@@ -70,7 +75,7 @@ const Results = () => {
 				<div className="details-container">
 					<div className="details"></div>
 					<div className="details-city-language">
-						{searchParams.get("location")}, {searchParams.get("language")}
+						{location}, {language}
 					</div>
 				</div>
 				<div>

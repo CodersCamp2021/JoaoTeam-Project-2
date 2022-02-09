@@ -12,9 +12,13 @@ export default function SearchWindow() {
 
     async function handleSubmit(event) {
         event.preventDefault()
+        if (location.trim() == "") {
+            setLocation("Poland");
+        }
+        console.log(location)
         navigate({
             pathname: "results",
-            search: `?location=${location}&language=${language}`
+            search: `?location=${encodeURIComponent(location)}&language=${encodeURIComponent(language)}`
         });
     }
 
@@ -40,7 +44,7 @@ export default function SearchWindow() {
                     >
                         <option value="">any language</option>
                         <option value="C">C</option>
-                        <option value="C++">C++</option>
+                        <option value="C++"> C++</option>
                         <option value="C#">C#</option>
                         <option value="Java">Java</option>
                         <option value="JavaScript">JavaScript</option>
