@@ -92,6 +92,7 @@ body {
 
 .user-img {
 	border-radius: 50%;
+	cursor: pointer;
 }
 
 .pageNumbers {
@@ -117,6 +118,11 @@ body {
 .pageNumbers li.active {
 	border: 1px solid #575757;
 	border-radius: 50%;
+}
+
+.link-style {
+	text-decoration: none;
+	color: #575757;
 }
 
 @media (max-width: 1300px) {

@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
-import Toggle from "../ResultsPage/Toggle.js"
-import { useNavigate, Link } from "react-router-dom"
+import Toggle from "../ResultsPage/Toggle.js";
+import { useNavigate, Link } from "react-router-dom";
 
 function Ranking() {
-
 	let navigate = useNavigate();
 
-    async function handleClick(event) {
-        navigate({
-            pathname: "/",
-        });
-    }
+	async function handleClick(event) {
+		navigate({
+			pathname: "/",
+		});
+	}
 
 	const [users, setUsers] = useState([]);
 	const [toggled, setToggled] = useState(false);
@@ -27,7 +26,6 @@ function Ranking() {
 			setUsers(items);
 		}
 		requestData().catch(console.error);
-		
 	}, [order]);
 
 	const handleOrder = () => {
@@ -41,14 +39,12 @@ function Ranking() {
 	return (
 		<div>
 			<div className="results-container">
-			<Link to="/">
-				<img className="logo" />
-			</Link>
+				<Link to="/">
+					<img className="logo" />
+				</Link>
 				<div className="details-container">
 					<div className="details ranking"></div>
-					<div className="details-city-language">
-						Top 30 in Poland
-					</div>
+					<div className="details-city-language">Top 30 in Poland</div>
 				</div>
 				<div>
 					<div className="switch-container">
@@ -64,15 +60,17 @@ function Ranking() {
 				<div className="users-container-ranking">
 					{users.map((user, index) => {
 						return (
-							<div className="user-container" key={user.login}>
-								<h2>#{index + 1}</h2>
-								<img
-									className="user-img"
-									src={user.avatar_url}
-									alt={user.login}
-								/>
-								<h2>{user.login}</h2>
-							</div>
+							<Link to={`/user/${user.login}`} className="link-style">
+								<div className="user-container" key={user.login}>
+									<h2>#{index + 1}</h2>
+									<img
+										className="user-img"
+										src={user.avatar_url}
+										alt={user.login}
+									/>
+									<h2>{user.login}</h2>
+								</div>
+							</Link>
 						);
 					})}
 				</div>
