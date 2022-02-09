@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const App = () => {
 	return (
-		<Router>
+		<Router basename="/joaoteam-project-2">
             <Routes>
                 <Route path="/" element={< MainPage />} />
                 <Route path="/results" element={<Results />} />
