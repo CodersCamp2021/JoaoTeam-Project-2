@@ -1,24 +1,25 @@
 @import url(Search.css);
+@import url(RankingWindow.css);
 
 .main-page-container {
-    background: url(../styles/UI/background_gradient.png) no-repeat center center;
-    min-height: 100%;
-    min-width: 1024px;
-    width: 100%;
-    height: auto;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-size: cover;
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 0.4fr 0.8fr 2.3fr 0.5fr; 
-    gap: 5% 0%; 
-    grid-template-areas: 
-    "logo logo"
-    "intro intro"
-    "right-main left-main"
-    "bottom-bar bottom-bar"; 
+	background: url(../styles/UI/background_gradient.png) no-repeat center center;
+	min-height: 100%;
+	min-width: 1024px;
+	width: 100%;
+	height: auto;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background-size: cover;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 0.4fr 0.8fr 2.3fr 0.5fr;
+	gap: 5% 0%;
+	grid-template-areas:
+		"logo logo"
+		"intro intro"
+		"right-main left-main"
+		"bottom-bar bottom-bar";
 }
 
 .logo {
@@ -31,55 +32,53 @@
     margin-top: 4vh;
 }
 
-.intro { 
-    grid-area: intro; 
-    font-weight: normal;
-    font-size: 2rem;
-    line-height: 49px;
-    margin-left: 15vw;
+.intro {
+	grid-area: intro;
+	font-weight: normal;
+	font-size: 2rem;
+	line-height: 49px;
+	margin-left: 15vw;
 }
 
 .looking {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .right-main {
-    grid-area: right-main;
-    margin-left: 14vw;
+	grid-area: right-main;
+	margin-left: 14vw;
 }
 
 .left-main {
-    grid-area: left-main;
+	grid-area: left-main;
 }
 
-
 .bottom-bar {
-    grid-area: bottom-bar; 
+	grid-area: bottom-bar;
 }
 
 @media screen and (max-width: 650px) {
-
-	.main-page-container{
+	.main-page-container {
 		display: grid;
 		grid-template-columns: 1fr;
-        grid-template-rows: 0.4fr 0.8fr 2.3fr 0.5fr;
-        grid-template-areas: 
-        "logo"
-        "intro"
-        "right-main"
-        "left-main"
-        "bottom-bar"; 
-        min-width: 650px;
+		grid-template-rows: 0.4fr 0.8fr 2.3fr 0.5fr;
+		grid-template-areas:
+			"logo"
+			"intro"
+			"right-main"
+			"left-main"
+			"bottom-bar";
+		min-width: 650px;
 	}
 
-    .intro { 
-        grid-area: intro; 
-        font-weight: normal;
-        font-size: 1.6rem;
-    }
+	.intro {
+		grid-area: intro;
+		font-weight: normal;
+		font-size: 1.6rem;
+	}
 
-    .logo {
-        justify-self:normal;
-        margin-left: 20vw;
-    }
+	.logo {
+		justify-self: normal;
+		margin-left: 20vw;
+	}
 }

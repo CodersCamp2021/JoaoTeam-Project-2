@@ -34,10 +34,19 @@ const User = () => {
     const { login } = useParams()
 
     useEffect(() => {
-        fetch(`https://api.github.com/users/${login}`, {method: 'GET', redirect: 'follow'})
-            .then(response => response.json())
-            .then(result => setUser(result))
-            .catch(error => console.log('error', error));
+        fetch(`https://api.github.com/users/${login}`, {
+            method: 'GET', 
+            redirect: 'follow',
+            headers: {
+                'User-Agent': 'ANYTHING_WILL_WORK_HERE'
+            }
+        })
+        .then(response => response.json())
+        .then(result => {
+            setUser(result)
+            document.querySelector(".User__unloaded").parentNode.removeChild(document.querySelector(".User__unloaded"))
+        })
+        .catch(error => console.log('error', error));
     }, [])
 
 
@@ -51,6 +60,7 @@ const User = () => {
                     <div><img src={user.avatar_url} /></div>
                 </div>
                 <div className="User__content">
+                    <div className="User__unloaded">Loading in progress</div>
                     <div className="User__info User__info--login User__info--mobile-center">
                         {user.login}
                     </div>
