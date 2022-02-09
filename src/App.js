@@ -9,7 +9,7 @@ import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
 var App = () => {
 	return (
-		<Router>
+		<Router basename="/JoaoTeam-Project-2">
             <Routes>
                 <Route path="/" element={< MainPage />} />
                 <Route path="/results" element={<Results />} />

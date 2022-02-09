@@ -1,11 +1,12 @@
 {
+  "homepage": "https://coderscamp2021.github.io/JoaoTeam-Project-2",
   "name": "joaoteam-project-2",
   "source": "src/index.html",
   "version": "1.0.0",
   "description": "The Polish on GitHub",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url ./",
+    "build": "parcel build src/index.html --public-url .",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "test": "jest src --env=jsdom",
@@ -20,7 +21,6 @@
   "bugs": {
     "url": "https://github.com/CodersCamp2021/JoaoTeam-Project-2/issues"
   },
-  "homepage": "https://github.com/CodersCamp2021/JoaoTeam-Project-2#readme",
   "devDependencies": {
     "@babel/plugin-syntax-jsx": "^7.16.7",
     "@babel/preset-env": "^7.16.8",
