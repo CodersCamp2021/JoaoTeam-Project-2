@@ -5,7 +5,7 @@ import Results from "./components/ResultsPage/Results";
 import PageNotFound from "./components/Errors/PageNotFound";
 import User from "./components/User/User";
 import Ranking from "./components/Ranking/Ranking";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
 const App = () => {
 	return (
