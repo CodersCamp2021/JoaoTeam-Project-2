@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 
 const API_URL = "https://api.github.com/search/users?q=";
 
-export default function SearchWindow() {
+function SearchWindow() {
 
     const [location, setLocation] = useState("");
     const [language, setLanguage] = useState("");
