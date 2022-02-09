@@ -25,7 +25,7 @@ jobs:
         name: Upload build as artifact
         if: always()
         with:
-          name: swquiz-dist
+          name: polish-on-github-dist
           path: ./dist
   deploy-on-github-pages:
     name: "Deploy app to GitHub Pages from main branch source code"
