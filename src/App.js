@@ -7,7 +7,7 @@ import User from "./components/User/User";
 import Ranking from "./components/Ranking/Ranking";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
-const App = () => {
+var App = () => {
 	return (
 		<Router basename="/joaoteam-project-2">
             <Routes>
