@@ -8,48 +8,33 @@ const Results = () => {
 	const [toggled, setToggled] = useState(false);
 	const [order, setOrder] = useState("repositories");
 
-	const [currentPage, setcurrentPage] = useState(1);
-	const [itemsPerPage, setitemsPerPage] = useState(12);
+	const [currentPage, setCurrentPage] = useState(1);
 
-	const pages = [];
-	for (let i = 1; i <= Math.ceil(users.length / itemsPerPage); i++) {
-		pages.push(i);
-	}
-
-	const indexOfLastItem = currentPage * itemsPerPage;
-	const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-	const currentItems = users.slice(indexOfFirstItem, indexOfLastItem);
+	const [pages, setPages] = useState([]);
 
 	function handleClick(event) {
-		setcurrentPage(Number(event.target.id));
+		setCurrentPage(Number(event.target.id));
+		window.scrollTo(0,0)
 	}
 
 	const [searchParams, setSearchParams] = useSearchParams({});
-
-	let location = "Poland";
-	let language = "any language";
-
-	if (searchParams.get("location") != "") {
-		location = searchParams.get("location");
-	}
-
-	let URL = `https://api.github.com/search/users?q=location:${location}`;
-
-	if (searchParams.get("language") != "") {
-		language = searchParams.get("language");
-		URL = URL + ` language:${language}`;
-	}
-
+	
 	useEffect(() => {
-		const fetchData = async () => {
-			const data = await fetch(URL + `&sort=${order}`);
-			const json = await data.json();
-			const items = json.items;
-
-			setUsers(items);
-		};
-		fetchData().catch(console.error);
-	}, [order]);
+		const languageParam = searchParams.get("language") != "" ? `language: ${searchParams.get("language")}` : ''
+		const locationParam = searchParams.get("location") != "" ? `location: ${searchParams.get("location")}` : 'location: Poland'
+		console.log(`https://api.github.com/search/users?per_page=20&page=${currentPage}&q=`+`${locationParam} ${languageParam}`.trim()+`&sort=${order}`)
+		fetch(`https://api.github.com/search/users?per_page=20&page=${currentPage}&q=${locationParam} ${languageParam}&sort=${order}`,{
+			method: 'GET',
+			redirect: 'follow',
+		})
+		.then(response => response.json())
+		.then(result => {
+			setUsers(result.items)
+			setPages(result.total_count >= 100 ? [1,2,3,4,5] : pagesFromCount(Math.floor((result.total_count - 1) / 20) + 1))
+			console.log(Math.floor(result.total_count / 20))
+		})
+		.catch(error => console.error(error))
+	}, [order, currentPage])
 
 	const handleOrder = () => {
 		if (order === "repositories") {
@@ -58,6 +43,14 @@ const Results = () => {
 			setOrder("repositories");
 		}
 	};
+
+	const pagesFromCount = (count) => {
+		let pages = []
+		for(let i = 0; i < count; i++) {
+			pages[i] = i+1;
+		}
+		return pages
+	}
 
 	return (
 		<>
@@ -68,7 +61,7 @@ const Results = () => {
 				<div className="details-container">
 					<div className="details"></div>
 					<div className="details-city-language">
-						{location}, {language}
+						{searchParams.get("location") != "" ? searchParams.get("location") : "Poland"}, {searchParams.get("language") != "" ? searchParams.get("language") : "any language"}
 					</div>
 				</div>
 				<div>
@@ -82,15 +75,14 @@ const Results = () => {
 					</div>
 				</div>
 				<div className="users-container">
-					{currentItems.map((user) => {
+					{users.map((user) => {
 						return (
-							<Link to={`/user/${user.login}`} className="link-style">
+							<Link to={`/user/${user.login}`} className="link-style" key={user.login}>
 								<div className="user-container">
 									<img
 										className="user-img"
 										src={user.avatar_url}
 										alt={user.login}
-										key={user.login}
 									/>
 									<h2>{user.login}</h2>
 								</div>
