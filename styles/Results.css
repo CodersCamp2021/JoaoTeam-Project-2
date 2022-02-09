@@ -135,7 +135,7 @@ body {
 	.users-container-ranking {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 10% 10%;
+		gap: 5% 10%;
 	}
 
 	.details {
