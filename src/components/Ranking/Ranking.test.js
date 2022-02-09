@@ -1,4 +1,4 @@
-import { fireEvent, getByRole, render, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react'
+import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
 import React from 'react'
@@ -1314,7 +1314,6 @@ test('full ranking page detail, ordered by repos', async () => {
     await waitFor(() => {
         expect(screen.getByText(/dekoder/i)).toBeInTheDocument()
     })
-
 })
 
 test('full ranking page detail, ordered by followers', async () => {
@@ -1340,5 +1339,29 @@ test('full ranking page detail, ordered by followers', async () => {
     await waitFor(() => {
         expect(screen.getByText(/josevalim/i)).toBeInTheDocument()
     })
+})
 
+test("site handles error server responses", async () => {
+    server.use(
+        rest.get("https://api.github.com/search/users", (res, req, ctx) => {
+            return res(
+                ctx.status(403),
+                ctx.body(`
+                    {"message":"API rate limit exceeded for x.x.x.x. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)","documentation_url":"https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting"}
+                `)
+            )
+        })
+    )
+
+    render(
+        <MemoryRouter initialEntries={['/user/octocat']}>
+            <Routes>
+                <Route path="/user/:login" element={<Ranking />}/>
+            </Routes>
+        </MemoryRouter>
+    )
+
+    await waitFor(() => {
+        expect(screen.getByText(/error/i)).toBeInTheDocument()
+    })
 })
