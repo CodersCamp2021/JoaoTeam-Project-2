@@ -22,7 +22,7 @@ const Results = () => {
 	
 	useEffect(() => {
 		const languageParam = searchParams.get("language") != "" ? `language:${searchParams.get("language")}` : ''
-		const locationParam = searchParams.get("location") != "" ? `location:${searchParams.get("location")}` : 'location: Poland'
+		const locationParam = searchParams.get("location") != "" ? `location:${searchParams.get("location")}` : 'location:Poland'
 
 		fetch(`https://api.github.com/search/users?per_page=20&page=${currentPage}&q=${locationParam} ${languageParam}&sort=${order}`,{
 			method: 'GET',
