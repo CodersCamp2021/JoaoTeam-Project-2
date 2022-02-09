@@ -26,7 +26,7 @@ const Results = () => {
 
 	let navigate = useNavigate();
 
-	async function backToHomePage(event) {
+	function backToHomePage(event) {
 		event.preventDefault();
 		navigate({
 			pathname: "/",
@@ -35,8 +35,8 @@ const Results = () => {
 
 	const [searchParams, setSearchParams] = useSearchParams({});
 
-	let location = "Poland"
-	let language = "any language"
+	let location = "Poland";
+	let language = "any language";
 
 	if (searchParams.get("location") != "") {
 		location = searchParams.get("location");
@@ -97,6 +97,7 @@ const Results = () => {
 									src={user.avatar_url}
 									alt={user.login}
 									key={user.login}
+									onClick={() => navigate({ pathname: `/user/${user.login}` })}
 								/>
 								<h2>{user.login}</h2>
 							</div>
