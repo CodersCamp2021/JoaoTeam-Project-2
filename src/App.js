@@ -5,11 +5,11 @@ import Results from "./components/ResultsPage/Results";
 import PageNotFound from "./components/Errors/PageNotFound";
 import User from "./components/User/User";
 import Ranking from "./components/Ranking/Ranking";
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-var App = () => {
+const App = () => {
 	return (
-		<Router basename="/JoaoTeam-Project-2">
+		<Router>
             <Routes>
                 <Route path="/" element={< MainPage />} />
                 <Route path="/results" element={<Results />} />
