@@ -4,9 +4,10 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 ## Project 2 - The Polish on GitHub
 *The project was carried out as part of the largest open web programming course in Poland - [CodersCamp 2021](https://www.coderscamp.edu.pl/).*  
-> [DEMO](https://coders-camp-2021-project-2.vercel.app)
 
-### Introduction 🇵🇱
+### Introduction 🇵🇱 
+> [Live version](https://coders-camp-2021-project-2.vercel.app) 
+
 Are you an IT recruiter? Or maybe you are looking for someone nearby for pair programming? Use our application where you can search for software developers by **localization** and programming **language!**  
 You can quickly sort results by the number of followers if you want to find someone really active in the community. Also take a look at the ranking of the best programmers in Poland. Maybe there you will find your future mentor...  
 
