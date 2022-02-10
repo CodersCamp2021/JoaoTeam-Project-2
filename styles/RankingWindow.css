@@ -11,7 +11,7 @@
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	transform: translateY(2em);
+	transform: translateY(75px);
 }
 
 .left-main div .inline-text {
@@ -21,4 +21,11 @@
 .popular-btn {
 	content: url(./UI/popularButton.svg);
 	margin-top: 10%;
+}
+
+@media screen and (max-width: 650px) {
+	.left-main {
+		transform: translateY(0);
+		margin-bottom: 40px;
+	}
 }
