@@ -25,7 +25,7 @@ body {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: auto;
-	gap: 10% 10%;
+	gap: 10vh 10vh;
 }
 
 .users-container-ranking {
@@ -92,11 +92,12 @@ body {
 
 .user-img {
 	border-radius: 50%;
+	cursor: pointer;
 }
 
 .pageNumbers {
 	grid-area: pagination;
-	margin-top: 10%;
+	margin-top: 8vh;
 	border-top: 1px solid #575757;
 	width: 800px;
 }
@@ -119,11 +120,22 @@ body {
 	border-radius: 50%;
 }
 
+.link-style {
+	text-decoration: none;
+	color: #575757;
+}
+
 @media (max-width: 1300px) {
 	.users-container {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 10% 10%;
+		gap: 10vh 10vh;
+	}
+
+	.users-container-ranking {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 5% 10%;
 	}
 
 	.details {
@@ -144,12 +156,17 @@ body {
 
 	.pageNumbers {
 		width: 500px;
-		margin-top: 30%;
 	}
 }
 
 @media (max-width: 750px) {
 	.users-container {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 7vh 0vh;
+	}
+
+	.users-container-ranking {
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 3% 0%;
@@ -167,6 +184,5 @@ body {
 
 	.pageNumbers {
 		width: 300px;
-		margin-top: 70%;
 	}
 }

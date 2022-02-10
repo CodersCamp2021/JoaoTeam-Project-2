@@ -23,13 +23,13 @@
 }
 
 .logo {
-    content: url(./UI/logo.png);
+	content: url(./UI/logo.png);
 }
 
 .logo-link {
-    grid-area: logo;
-    justify-self: center;
-    margin-top: 4vh;
+	grid-area: logo;
+	justify-self: center;
+	margin-top: 4vh;
 }
 
 .intro {
