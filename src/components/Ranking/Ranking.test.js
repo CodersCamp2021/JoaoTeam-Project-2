@@ -15,10 +15,10 @@ const server = setupServer(
                 return res(
                     ctx.status(200),
                     ctx.body(`{
-                        "total_count": 49804,
+                        "total_count": 49838,
                         "incomplete_results": false,
                         "items": [
-                        {
+                          {
                             "login": "dekoder",
                             "id": 5290046,
                             "node_id": "MDQ6VXNlcjUyOTAwNDY=",
@@ -38,8 +38,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "peterblazejewicz",
                             "id": 14539,
                             "node_id": "MDQ6VXNlcjE0NTM5",
@@ -59,8 +59,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "brydzu",
                             "id": 10862735,
                             "node_id": "MDQ6VXNlcjEwODYyNzM1",
@@ -80,8 +80,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "CesarChaMal",
                             "id": 13669461,
                             "node_id": "MDQ6VXNlcjEzNjY5NDYx",
@@ -101,8 +101,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "DariuszO",
                             "id": 23431934,
                             "node_id": "MDQ6VXNlcjIzNDMxOTM0",
@@ -122,8 +122,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "tomjal",
                             "id": 1255524,
                             "node_id": "MDQ6VXNlcjEyNTU1MjQ=",
@@ -143,8 +143,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "j4sysiak",
                             "id": 24600606,
                             "node_id": "MDQ6VXNlcjI0NjAwNjA2",
@@ -164,8 +164,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "pabit",
                             "id": 15835569,
                             "node_id": "MDQ6VXNlcjE1ODM1NTY5",
@@ -185,8 +185,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "slachiewicz",
                             "id": 6705942,
                             "node_id": "MDQ6VXNlcjY3MDU5NDI=",
@@ -206,8 +206,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "miklobit",
                             "id": 1035161,
                             "node_id": "MDQ6VXNlcjEwMzUxNjE=",
@@ -227,8 +227,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "coderoadpl",
                             "id": 57442589,
                             "node_id": "MDEyOk9yZ2FuaXphdGlvbjU3NDQyNTg5",
@@ -248,8 +248,8 @@ const server = setupServer(
                             "type": "Organization",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "streemline",
                             "id": 25568253,
                             "node_id": "MDQ6VXNlcjI1NTY4MjUz",
@@ -269,8 +269,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "Refuge89",
                             "id": 1009103,
                             "node_id": "MDQ6VXNlcjEwMDkxMDM=",
@@ -290,8 +290,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "Andarist",
                             "id": 9800850,
                             "node_id": "MDQ6VXNlcjk4MDA4NTA=",
@@ -311,8 +311,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "lhutyra",
                             "id": 1809563,
                             "node_id": "MDQ6VXNlcjE4MDk1NjM=",
@@ -332,8 +332,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "sheerun",
                             "id": 292365,
                             "node_id": "MDQ6VXNlcjI5MjM2NQ==",
@@ -353,8 +353,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "piecioshka",
                             "id": 244935,
                             "node_id": "MDQ6VXNlcjI0NDkzNQ==",
@@ -374,8 +374,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "mrexodia",
                             "id": 2458265,
                             "node_id": "MDQ6VXNlcjI0NTgyNjU=",
@@ -395,8 +395,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "JulianVolodia",
                             "id": 1219023,
                             "node_id": "MDQ6VXNlcjEyMTkwMjM=",
@@ -416,8 +416,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "xfix",
                             "id": 1297598,
                             "node_id": "MDQ6VXNlcjEyOTc1OTg=",
@@ -437,8 +437,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "mmalecki",
                             "id": 692459,
                             "node_id": "MDQ6VXNlcjY5MjQ1OQ==",
@@ -458,8 +458,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "Ondrik8",
                             "id": 59111771,
                             "node_id": "MDQ6VXNlcjU5MTExNzcx",
@@ -479,8 +479,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "appunite",
                             "id": 1047839,
                             "node_id": "MDEyOk9yZ2FuaXphdGlvbjEwNDc4Mzk=",
@@ -500,8 +500,8 @@ const server = setupServer(
                             "type": "Organization",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "gogainda",
                             "id": 379758,
                             "node_id": "MDQ6VXNlcjM3OTc1OA==",
@@ -521,8 +521,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "macbury",
                             "id": 110908,
                             "node_id": "MDQ6VXNlcjExMDkwOA==",
@@ -542,8 +542,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "Stellaris-Unification-Project",
                             "id": 98432538,
                             "node_id": "O_kgDOBd32Gg",
@@ -563,8 +563,8 @@ const server = setupServer(
                             "type": "Organization",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "ktosiu",
                             "id": 724676,
                             "node_id": "MDQ6VXNlcjcyNDY3Ng==",
@@ -584,8 +584,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "pplonski",
                             "id": 6959032,
                             "node_id": "MDQ6VXNlcjY5NTkwMzI=",
@@ -605,8 +605,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "eniuz",
                             "id": 657374,
                             "node_id": "MDQ6VXNlcjY1NzM3NA==",
@@ -626,8 +626,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "kamilkisiela",
                             "id": 8167190,
                             "node_id": "MDQ6VXNlcjgxNjcxOTA=",
@@ -647,18 +647,18 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        }
+                          }
                         ]
-                    }`)
+                      }`)
                 )
             case("followers"):
                 return res(
                     ctx.status(200),
                     ctx.body(`{
-                        "total_count": 49804,
+                        "total_count": 49838,
                         "incomplete_results": false,
                         "items": [
-                        {
+                          {
                             "login": "josevalim",
                             "id": 9582,
                             "node_id": "MDQ6VXNlcjk1ODI=",
@@ -678,8 +678,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "JohnSundell",
                             "id": 2466701,
                             "node_id": "MDQ6VXNlcjI0NjY3MDE=",
@@ -699,8 +699,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "kamilmysliwiec",
                             "id": 23244943,
                             "node_id": "MDQ6VXNlcjIzMjQ0OTQz",
@@ -720,8 +720,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "hasherezade",
                             "id": 3115348,
                             "node_id": "MDQ6VXNlcjMxMTUzNDg=",
@@ -741,8 +741,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "krzysztofzablocki",
                             "id": 1468993,
                             "node_id": "MDQ6VXNlcjE0Njg5OTM=",
@@ -762,8 +762,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "apaszke",
                             "id": 4583066,
                             "node_id": "MDQ6VXNlcjQ1ODMwNjY=",
@@ -783,8 +783,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "kitze",
                             "id": 1160594,
                             "node_id": "MDQ6VXNlcjExNjA1OTQ=",
@@ -804,8 +804,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "trimstray",
                             "id": 31127917,
                             "node_id": "MDQ6VXNlcjMxMTI3OTE3",
@@ -825,8 +825,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "wojtekmaj",
                             "id": 5426427,
                             "node_id": "MDQ6VXNlcjU0MjY0Mjc=",
@@ -846,8 +846,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "satya164",
                             "id": 1174278,
                             "node_id": "MDQ6VXNlcjExNzQyNzg=",
@@ -867,8 +867,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "jaceklaskowski",
                             "id": 62313,
                             "node_id": "MDQ6VXNlcjYyMzEz",
@@ -888,8 +888,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "anitatabaczka",
                             "id": 45717852,
                             "node_id": "MDQ6VXNlcjQ1NzE3ODUy",
@@ -909,8 +909,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "ambv",
                             "id": 55281,
                             "node_id": "MDQ6VXNlcjU1Mjgx",
@@ -930,8 +930,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "grabbou",
                             "id": 2464966,
                             "node_id": "MDQ6VXNlcjI0NjQ5NjY=",
@@ -951,8 +951,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "SkalskiP",
                             "id": 26109316,
                             "node_id": "MDQ6VXNlcjI2MTA5MzE2",
@@ -972,8 +972,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "michalbe",
                             "id": 347657,
                             "node_id": "MDQ6VXNlcjM0NzY1Nw==",
@@ -993,8 +993,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "solnic",
                             "id": 1066,
                             "node_id": "MDQ6VXNlcjEwNjY=",
@@ -1014,8 +1014,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "medikoo",
                             "id": 122434,
                             "node_id": "MDQ6VXNlcjEyMjQzNA==",
@@ -1035,8 +1035,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "Andarist",
                             "id": 9800850,
                             "node_id": "MDQ6VXNlcjk4MDA4NTA=",
@@ -1056,8 +1056,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "bartaz",
                             "id": 83575,
                             "node_id": "MDQ6VXNlcjgzNTc1",
@@ -1077,8 +1077,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "mrexodia",
                             "id": 2458265,
                             "node_id": "MDQ6VXNlcjI0NTgyNjU=",
@@ -1098,8 +1098,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "ihor",
                             "id": 490943,
                             "node_id": "MDQ6VXNlcjQ5MDk0Mw==",
@@ -1119,8 +1119,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "mrholek",
                             "id": 3524167,
                             "node_id": "MDQ6VXNlcjM1MjQxNjc=",
@@ -1140,8 +1140,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "kmagiera",
                             "id": 726445,
                             "node_id": "MDQ6VXNlcjcyNjQ0NQ==",
@@ -1161,8 +1161,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "mgeeky",
                             "id": 654344,
                             "node_id": "MDQ6VXNlcjY1NDM0NA==",
@@ -1182,8 +1182,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "rootkovska",
                             "id": 10212863,
                             "node_id": "MDQ6VXNlcjEwMjEyODYz",
@@ -1203,8 +1203,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "MichalLytek",
                             "id": 10618781,
                             "node_id": "MDQ6VXNlcjEwNjE4Nzgx",
@@ -1224,8 +1224,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "helloroman",
                             "id": 9623791,
                             "node_id": "MDQ6VXNlcjk2MjM3OTE=",
@@ -1245,8 +1245,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "piotrwitek",
                             "id": 739075,
                             "node_id": "MDQ6VXNlcjczOTA3NQ==",
@@ -1266,8 +1266,8 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        },
-                        {
+                          },
+                          {
                             "login": "JustArchi",
                             "id": 1069029,
                             "node_id": "MDQ6VXNlcjEwNjkwMjk=",
@@ -1287,10 +1287,9 @@ const server = setupServer(
                             "type": "User",
                             "site_admin": false,
                             "score": 1.0
-                        }
+                          }
                         ]
-                    }
-                    `)
+                      }`)
                 )
         }
         console.log("sorted:", sortType)
@@ -1304,9 +1303,9 @@ afterAll(() => server.close())
 test('full ranking page detail, ordered by repos', async () => {
     
     render(
-        <MemoryRouter initialEntries={['/user/octocat']}>
+        <MemoryRouter initialEntries={['/ranking']}>
             <Routes>
-                <Route path="/user/:login" element={<Ranking />}/>
+                <Route path="/ranking" element={<Ranking />}/>
             </Routes>
         </MemoryRouter>
     )
@@ -1319,9 +1318,9 @@ test('full ranking page detail, ordered by repos', async () => {
 test('full ranking page detail, ordered by followers', async () => {
     
     render(
-        <MemoryRouter initialEntries={['/user/octocat']}>
+        <MemoryRouter initialEntries={['/ranking']}>
             <Routes>
-                <Route path="/user/:login" element={<Ranking />}/>
+                <Route path="/ranking" element={<Ranking />}/>
             </Routes>
         </MemoryRouter>
     )
@@ -1341,7 +1340,7 @@ test('full ranking page detail, ordered by followers', async () => {
     })
 })
 
-test("site handles error server responses", async () => {
+test("ranking site handles error server responses", async () => {
     server.use(
         rest.get("https://api.github.com/search/users", (res, req, ctx) => {
             return res(
@@ -1354,14 +1353,14 @@ test("site handles error server responses", async () => {
     )
 
     render(
-        <MemoryRouter initialEntries={['/user/octocat']}>
+        <MemoryRouter initialEntries={['/ranking']}>
             <Routes>
-                <Route path="/user/:login" element={<Ranking />}/>
+                <Route path="/ranking" element={<Ranking />}/>
             </Routes>
         </MemoryRouter>
     )
 
     await waitFor(() => {
-        expect(screen.getByText(/error/i)).toBeInTheDocument()
-    })
+      expect(screen.getByText(/error/i)).toBeInTheDocument()
+  })
 })

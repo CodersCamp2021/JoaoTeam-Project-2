@@ -1,8 +1,8 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { fireEvent, getByRole, render, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react'
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
 import React from 'react'
-import Ranking from "./Ranking"
+import Results from './Results'
 import { MemoryRouter, Route, Routes } from "react-router-dom"
 import 'regenerator-runtime/runtime'
 
@@ -1304,9 +1304,9 @@ afterAll(() => server.close())
 test('full ranking page detail, ordered by repos', async () => {
     
     render(
-        <MemoryRouter initialEntries={['/user/octocat']}>
+        <MemoryRouter initialEntries={['/results']}>
             <Routes>
-                <Route path="/user/:login" element={<Ranking />}/>
+                <Route path="/results" element={<Results />}/>
             </Routes>
         </MemoryRouter>
     )
@@ -1316,12 +1316,12 @@ test('full ranking page detail, ordered by repos', async () => {
     })
 })
 
-test('full ranking page detail, ordered by followers', async () => {
+test('full results page detail, ordered by followers', async () => {
     
     render(
-        <MemoryRouter initialEntries={['/user/octocat']}>
+        <MemoryRouter initialEntries={['/results']}>
             <Routes>
-                <Route path="/user/:login" element={<Ranking />}/>
+                <Route path="/results" element={<Results />}/>
             </Routes>
         </MemoryRouter>
     )
@@ -1341,7 +1341,7 @@ test('full ranking page detail, ordered by followers', async () => {
     })
 })
 
-test("site handles error server responses", async () => {
+test("results site handles error server responses", async () => {
     server.use(
         rest.get("https://api.github.com/search/users", (res, req, ctx) => {
             return res(
@@ -1354,9 +1354,9 @@ test("site handles error server responses", async () => {
     )
 
     render(
-        <MemoryRouter initialEntries={['/user/octocat']}>
+        <MemoryRouter initialEntries={['/results']}>
             <Routes>
-                <Route path="/user/:login" element={<Ranking />}/>
+                <Route path="/results" element={<Results />}/>
             </Routes>
         </MemoryRouter>
     )
