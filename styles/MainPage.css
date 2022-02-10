@@ -15,7 +15,6 @@
 }
 
 .main-page-container {
-	height: 90vh;
 	width: 90vw;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -65,17 +64,54 @@ a.logo-link {
 }
 
 @media screen and (max-width: 650px) {
+
+	.main-page-background {
+		min-height: 100vh;
+	}
+
 	.main-page-container {
-		height: 100%;
 		display: grid;
+		grid-gap: 1em;
+		width: 100%;
+		margin: 0;
 		grid-template-columns: 1fr;
-		grid-template-rows: 0.2fr 0.5fr 0.5fr;
 		gap: 3% 0%;
-		grid-template-areas:
-			"logo"
-			"right-main"
-			"left-main";
+		overflow: scroll;
+		grid-template-areas: unset;
+		align-items: center;
 		justify-self: center;
+		box-sizing: border-box;
+		padding: 0 5px;
+	}
+
+	.main-page-container > * {
+		width: 100%;
+		margin-bottom: 1em;
+	}
+
+	a.logo-link {
+		grid-area:unset;
+		text-align: center;
+		width: unset;
+	}
+
+	.right-main {
+		grid-area: unset;
+	}
+
+	.search-window {
+		width: 100%;
+	}
+
+	.left-main {
+		margin: 0;
+		padding: 0;
+		grid-area: unset;
+		width: 100%;
+	}
+
+	.left-main > div {
+		width: unset;
 	}
 
 	.intro {
