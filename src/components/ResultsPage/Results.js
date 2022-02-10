@@ -31,7 +31,7 @@ const Results = () => {
 				: "location:Poland";
 
 		fetch(
-			`https://api.github.com/search/users?per_page=21&page=${currentPage}&q=${locationParam} ${languageParam}&sort=${order}`,
+			`https://api.github.com/search/users?per_page=18&page=${currentPage}&q=${locationParam} ${languageParam}&sort=${order}`,
 			{
 				method: "GET",
 				redirect: "follow",
