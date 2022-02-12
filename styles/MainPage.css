@@ -1,43 +1,54 @@
 @import url(Search.css);
 @import url(RankingWindow.css);
 
-.main-page-container {
+.main-page-background {
+	box-sizing: border-box;
 	background: url(../styles/UI/background_gradient.png) no-repeat center center;
+	background-size: cover;
 	min-height: 100%;
-	min-width: 1024px;
-	width: 100%;
-	height: auto;
+	width: 100vw;
 	position: fixed;
+	display: grid;
+	place-self: center;
 	left: 0;
 	top: 0;
-	background-size: cover;
+	overflow-y: scroll;
+}
+
+.main-page-container {
+	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 0.4fr 0.8fr 2.3fr 0.5fr;
-	gap: 5% 0%;
+	grid-template-rows: 10vh 4fr;
 	grid-template-areas:
 		"logo logo"
-		"intro intro"
-		"right-main left-main"
-		"bottom-bar bottom-bar";
+		"right-main left-main";
+	align-items: center;
+	justify-items: center;
+	justify-content: center;
+	align-items: center;
+	max-width: 1000px;
+	margin: 0 auto;
 }
 
 .logo {
-	content: url(./UI/logo.png);
+	content: url(./UI/logo.svg);
+	height: 50px;
 }
 
-.logo-link {
+a.logo-link {
 	grid-area: logo;
 	justify-self: center;
-	margin-top: 4vh;
+
 }
 
 .intro {
 	grid-area: intro;
+	margin-top: 0%;
+	padding-top: 0%;
 	font-weight: normal;
 	font-size: 2rem;
 	line-height: 49px;
-	margin-left: 15vw;
 }
 
 .looking {
@@ -46,39 +57,80 @@
 
 .right-main {
 	grid-area: right-main;
-	margin-left: 14vw;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 0%;
+	max-width: 470px;
 }
 
 .left-main {
 	grid-area: left-main;
-}
-
-.bottom-bar {
-	grid-area: bottom-bar;
+	width: 100%;
 }
 
 @media screen and (max-width: 650px) {
+
+	.main-page-background {
+		min-height: 100vh;
+	}
+
 	.main-page-container {
 		display: grid;
+		grid-gap: 1em;
+		width: 100%;
+		margin: 0;
 		grid-template-columns: 1fr;
-		grid-template-rows: 0.4fr 0.8fr 2.3fr 0.5fr;
-		grid-template-areas:
-			"logo"
-			"intro"
-			"right-main"
-			"left-main"
-			"bottom-bar";
-		min-width: 650px;
+		gap: 3% 0%;
+		overflow-y: scroll;
+		grid-template-areas: unset;
+		align-items: center;
+		justify-items: center;
+		box-sizing: border-box;
+		padding: 0 5px;
+		max-width: 1000px;
+	}
+
+	.main-page-container > * {
+		width: 100%;
+		margin-bottom: 1em;
+	}
+
+	a.logo-link {
+		grid-area:unset;
+		text-align: center;
+		width: unset;
+	}
+
+	.right-main {
+		grid-area: unset;
+	}
+
+	.search-window {
+		width: 100%;
+	}
+
+	.left-main {
+		margin: 0;
+		padding: 0;
+		grid-area: unset;
+		width: 100%;
+	}
+
+	.left-main > div {
+		width: unset;
 	}
 
 	.intro {
 		grid-area: intro;
 		font-weight: normal;
 		font-size: 1.6rem;
+		margin-left: auto;
+    	margin-right: auto;
+		padding-bottom: 3vh;
 	}
 
-	.logo {
-		justify-self: normal;
-		margin-left: 20vw;
+	.right-main {
+		margin-left: 0vw;
 	}
 }

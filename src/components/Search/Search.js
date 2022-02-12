@@ -23,7 +23,7 @@ function SearchWindow() {
     }
 
     return (
-        <div className="right-main">
+        <div className="search-window">
             <form onSubmit={handleSubmit}>
                 <label htmlFor="location">
                     <h5 className="inline-text">Best coders who live...</h5>

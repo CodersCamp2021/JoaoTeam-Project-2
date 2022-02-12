@@ -25,7 +25,7 @@ body {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: auto;
-	gap: 10% 10%;
+	gap: 10vh 10vh;
 }
 
 .users-container-ranking {
@@ -97,7 +97,7 @@ body {
 
 .pageNumbers {
 	grid-area: pagination;
-	margin-top: 10%;
+	margin-top: 8vh;
 	border-top: 1px solid #575757;
 	width: 800px;
 }
@@ -129,7 +129,7 @@ body {
 	.users-container {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 10% 10%;
+		gap: 10vh 10vh;
 	}
 
 	.users-container-ranking {
@@ -156,7 +156,6 @@ body {
 
 	.pageNumbers {
 		width: 500px;
-		margin-top: 30%;
 	}
 }
 
@@ -164,7 +163,7 @@ body {
 	.users-container {
 		display: grid;
 		grid-template-columns: 1fr;
-		gap: 3% 0%;
+		gap: 7vh 0vh;
 	}
 
 	.users-container-ranking {
@@ -185,6 +184,5 @@ body {
 
 	.pageNumbers {
 		width: 300px;
-		margin-top: 70%;
 	}
 }
